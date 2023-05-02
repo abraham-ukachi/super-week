@@ -125,19 +125,19 @@ These are the following tasks of **Job 01** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *`feature/route - Branch`* | *_In progress_*
-| 2 | *`Composer & AutoLoader`* | Pending
-| 3 | *`AltoRouter - Installation`* | Pending
+| 1 | *`feature/route - Branch`* | [Done](#Job-01)
+| 2 | *`Composer & AutoLoader`* | [Done](./composer.json)
+| 3 | *`AltoRouter - Installation`* | [Done](./composer.json)
 | 4 | *`AltoRouter - Tests`* | Pending
 | 5 | *`Commit & PR from 'feature/router' to 'main'`* | Pending
 
 > NOTE: (\*) = still needs to be updated
 
-### Random Screenshots for Job 01
+### Random Screenshots & Giphy Captures for Job 01
 
 | No. | GUI | CLI |
 |:----|:----|:--------|
-| 1 | - | - |
+| 1 | - | ![Job 01 - Composer - Giphy Capture](./.github/gifs/job01_composer.gif) |
 
 </details>
 
