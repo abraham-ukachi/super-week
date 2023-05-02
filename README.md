@@ -128,7 +128,7 @@ These are the following tasks of **Job 01** w/ their names and current status:
 | 1 | *`feature/route - Branch`* | [Done](#Job-01)
 | 2 | *`Composer & AutoLoader`* | [Done](./composer.json)
 | 3 | *`AltoRouter - Installation`* | [Done](./composer.json)
-| 4 | *`AltoRouter - Tests`* | Pending
+| 4 | *`AltoRouter - Tests`* | *_In progress_*
 | 5 | *`Commit & PR from 'feature/router' to 'main'`* | Pending
 
 > NOTE: (\*) = still needs to be updated
