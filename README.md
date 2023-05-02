@@ -1,7 +1,7 @@
 # `super-week`
 > IMPORTANT: This is a work in progress and subject to major changes before and/or after the specified **deadline**.
 
-A compilation of school **~10 tasks / jobs** to serve as revision of all previously completed projects including [the big one - **Maxaboom**](https://github.com/abraham-ukachi/boutique-en-ligne). This should be a fun experience as we take a walk back memory lane on all the cool router and database related stuff 😜. #BuckleUp 🚀
+A compilation of **~10 school tasks / jobs** to serve as revision of all previously completed projects including [the big one - **Maxaboom**](https://github.com/abraham-ukachi/boutique-en-ligne). This should be a fun experience as we take a walk back memory lane on all the cool router and database related stuff 😜. #BuckleUp 🚀
 
 
 ## Description
@@ -51,7 +51,6 @@ The folder & file structure of this project:
 - - [**View**](./src/View/)
 - - [**Controller**](./src/Controller/)
 - ...
-- [**screenshots**](./screenshots)
 - LICENSE
 - README.md
 - **composer.json**
@@ -71,7 +70,7 @@ First, as you are seasoned developers, you will initialize a new git project to 
 
 ### Requirements for Job 00
 
-1. Add a ReadMe to your project to explain to the world how your project is an exciting project where you will show off your full dev skills.
+1. Add a ReadME to your project to explain to the world how your project is an exciting project where you will show off your full dev skills.
 
 2. Make a commit taking into account your latest changes and push your project to [https://www.github.io/prenom-nom/super-week](https://www.github.io/abraham-ukachi/super-week).
 
@@ -105,16 +104,20 @@ These are the following tasks of **Job 00** w/ their names and current status:
 
 ### Description of Job 01
 
-Now that you've uploaded your changes, create a new “feature/router” branch and switch to it.
-As you can imagine, you will install a router on your project to have clean URLs and start a project with a good base. Followed the documentation well, taking the time to read all the steps. As soon as the router is installed in your project, make a commit.
+Now that you've uploaded your changes, create a new **`feature/router`** branch and switch to it.
+As you can imagine, you will install a router on your project to have clean URLs and start a project with a good base. Followed the documentation well, **taking the time to read** all the steps. As soon as the router is installed in your project, **make a commit**.
 
-You can then import your router into an index.php ﬁle in the root of your project. Don't forget to use composer's autoloader to retrieve the altorouter class. 
+You can then import your router into an index.php ﬁle in the root of your project. Don't forget to use **composer's autoloader to retrieve the altorouter class**. 
 
-Once that's in place, make a commit. Once your router is set up, do a few tests to make sure your router is working. When all your tests work, commit again to save your progress. Push your work to github and pull request from origin feature/router to main or master depending on your base branch name.
+Once that's in place, **make a commit**. Once your router is set up, do a few tests to make sure your router is working. When all your tests work, **commit again to save your progress**. Push your work to github and **pull request** from origin feature/router to main or master depending on your base branch name.
 
 ### Requirements for Job 01
 
-- 
+Tests for router verification:
+
+- **`/`**: displays a page in which there's a first-level title that says *"Welcome to the homepage"*.
+- **`/users`**: displays a page with a top-level title that says *"Welcome to the Users list"*.
+- **`/users/1`**: display a page with a first level title that says *"Welcome to the page of user 1"* where the __number__ changes depending on what is present in the URI.
 
 ### Tasks for Job 01
 
@@ -122,8 +125,11 @@ These are the following tasks of **Job 01** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`feature/route - Branch`* | *_In progress_*
+| 2 | *`Composer & AutoLoader`* | Pending
+| 3 | *`AltoRouter - Installation`* | Pending
+| 4 | *`AltoRouter - Tests`* | Pending
+| 5 | *`Commit & PR from 'feature/router' to 'main'`* | Pending
 
 > NOTE: (\*) = still needs to be updated
 
