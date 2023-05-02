@@ -130,7 +130,7 @@ These are the following tasks of **Job 01** w/ their names and current status:
 | 2 | *`Composer & AutoLoader`* | [Done](./composer.json)
 | 3 | *`AltoRouter - Installation`* | [Done](./composer.json)
 | 4 | *`AltoRouter - Tests`* | [Done](./index.php)
-| 5 | *`Commit & PR from 'feature/router' to 'main'`* | Pending
+| 5 | *`Commit & PR from 'feature/router' to 'main'`* | *_In progress_*
 
 > NOTE: (\*) = still needs to be updated
 
