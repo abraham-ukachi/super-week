@@ -27,7 +27,7 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | No. | Job | Status |
 |:----|:----|:-------|
 | 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
-| 2 | [*`Job 01`*](#Job-01) | *_In progress_* |
+| 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
 | 3 | [*`Job 01.5`*](#Job-01.5) | Pending |
 | 4 | [*`Job 02.1`*](#Job-02.1) | Pending |
 | 5 | [*`Job 02.2`*](#Job-02.2) | Pending |
@@ -130,7 +130,7 @@ These are the following tasks of **Job 01** w/ their names and current status:
 | 2 | *`Composer & AutoLoader`* | [Done](./composer.json)
 | 3 | *`AltoRouter - Installation`* | [Done](./composer.json)
 | 4 | *`AltoRouter - Tests`* | [Done](./index.php)
-| 5 | *`Commit & PR from 'feature/router' to 'main'`* | *_In progress_*
+| 5 | *`Commit & PR from 'feature/router' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/1)
 
 > NOTE: (\*) = still needs to be updated
 
