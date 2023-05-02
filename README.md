@@ -26,8 +26,8 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 
 | No. | Job | Status |
 |:----|:----|:-------|
-| 1 | [*`Job 00`*](#Job-00) | Pending |
-| 2 | [*`Job 01`*](#Job-01) | Pending |
+| 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
+| 2 | [*`Job 01`*](#Job-01) | *_In progress_* |
 | 3 | [*`Job 01.5`*](#Job-01.5) | Pending |
 | 4 | [*`Job 02.1`*](#Job-02.1) | Pending |
 | 5 | [*`Job 02.2`*](#Job-02.2) | Pending |
@@ -82,15 +82,18 @@ These are the following tasks of **Job 00** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *`README.md`* | Pending
-| 2 | *`Commit`* | Pending
+| 1 | *`README.md`* | [Done](./README.md)\* 
+| 2 | *`Commit`* | [Done](#)
+
+
+> NOTE: (\*) = still needs to be updated
 
 
 ### Random Screenshots for Job 00
 
 | No. | GUI | CLI |
 |:----|:----|:--------|
-| 1 | - | - |
+| 1 | ![Job 00 - ReadME of super-week](./.github/screenshots/job00_01.png) | N/A |
 
 
 </details>
@@ -122,6 +125,7 @@ These are the following tasks of **Job 01** w/ their names and current status:
 | 1 | *``* | Pending
 | 2 | *``* | Pending
 
+> NOTE: (\*) = still needs to be updated
 
 ### Random Screenshots for Job 01
 
@@ -167,6 +171,9 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 | 1 | *``* | Pending
 | 2 | *``* | Pending
 
+> NOTE: (\*) = still needs to be updated
+
+
 
 ### Random Screenshots for Job 01.5
 
@@ -209,6 +216,9 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 | 1 | *``* | Pending
 | 2 | *``* | Pending
 
+> NOTE: (\*) = still needs to be updated
+
+
 
 ### Random Screenshots for Job 02.1
 
@@ -250,6 +260,9 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 | 1 | *``* | Pending
 | 2 | *``* | Pending
 
+> NOTE: (\*) = still needs to be updated
+
+
 
 ### Random Screenshots for Job 02.2
 
@@ -290,6 +303,9 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 | 1 | *``* | Pending
 | 2 | *``* | Pending
 
+> NOTE: (\*) = still needs to be updated
+
+
 
 ### Random Screenshots for Job 02.3
 
@@ -327,6 +343,9 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 |:----|:-----|:-------|
 | 1 | *``* | Pending
 | 2 | *``* | Pending
+
+> NOTE: (\*) = still needs to be updated
+
 
 
 ### Random Screenshots for Job 02.4  
@@ -369,6 +388,9 @@ These are the following tasks of **Job 03** w/ their names and current status:
 | 1 | *``* | Pending
 | 2 | *``* | Pending
 
+> NOTE: (\*) = still needs to be updated
+
+
 
 ### Random Screenshots for Job 03  
 
@@ -410,6 +432,8 @@ These are the following tasks of **Job 04** w/ their names and current status:
 | 1 | *``* | Pending
 | 2 | *``* | Pending
 
+> NOTE: (\*) = still needs to be updated
+
 
 ### Random Screenshots for Job 04  
 
@@ -447,6 +471,8 @@ These are the following tasks of **Job +** w/ their names and current status:
 |:----|:-----|:-------|
 | 1 | *``* | Pending
 | 2 | *``* | Pending
+
+> NOTE: (\*) = still needs to be updated
 
 
 ### Random Screenshots for Job +  
