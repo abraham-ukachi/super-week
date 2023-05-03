@@ -28,14 +28,14 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 |:----|:----|:-------|
 | 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
 | 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
-| 3 | [*`Job 01.5`*](#Job-01.5) | [Done](./database.sql) |
-| 4 | [*`Job 02.1`*](#Job-02.1) | [Done](./composer.json) |
-| 5 | [*`Job 02.2`*](#Job-02.2) | *_In progress_* |
-| 6 | [*`Job 02.3`*](#Job-02.3) | Pending |
-| 6 | [*`Job 02.4`*](#Job-02.4) | Pending |
+| 3 | [*`Job 01.5`*](#Job-015) | [Done](./database.sql) |
+| 4 | [*`Job 02.1`*](#Job-021) | [Done](./composer.json) |
+| 5 | [*`Job 02.2`*](#Job-022) | *_In progress_* |
+| 6 | [*`Job 02.3`*](#Job-023) | Pending |
+| 6 | [*`Job 02.4`*](#Job-024) | Pending |
 | 7 | [*`Job 03`*](#Job-03) | Pending |
 | 8 | [*`Job 04`*](#Job-04) | Pending |
-| 9 | [*`Job +`*](#Job-+) | Pending |
+| 9 | [*`Job +`*](#Job-) | Pending |
 
 
 > NOTE: (\*) = still needs to be updated \
@@ -285,9 +285,11 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 
 | No. | GUI | CLI |
 |:----|:----|:----|
-| 1 | - | - |
-| 2 | - | - |
+| 1 | ![Job 02.2 - GUI - Screenshot](./.github/screenshots/job02.2_gui.png) | ![Job 02.2 - CLI - Screenshot](./.github/screenshots/job02.2_cli.png) |
+| 2 | N/A | N/A |
 
+
+> NOTE: (**N/A**) = not available ;)
 
 </details>
 
