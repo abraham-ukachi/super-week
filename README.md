@@ -275,7 +275,7 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 | 2 | *`UserController.php`* | [Done](./src/Controller/UserController.php)\* |
 | 3 | *`UserModel.php`* | [Done](./src/Model/UserModel.php)\* |
 | 4 | *`index.php`* | [Done](./index.php) |
-| 5 | *`Final Commit & PR of 'feature/route' to 'main'`* | Pending |
+| 5 | *`Final Commit & PR of 'feature/first-route' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/4 |
 
 > NOTE: (\*) = still needs to be updated
 
