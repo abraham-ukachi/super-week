@@ -212,7 +212,11 @@ Make a commit and push your branch to the repo, make a pull request as before, a
 
 ### Requirements for Job 02.1
 
-- 
+1. Create & switch to a *`feature/project-design`* branch 
+2. Create `Model/`, `Controller/` and `View/` folders in `src/`
+3. Add corresponding MVC namespaces to **composer.json** and update it using `dumpautoload`
+4. Create a pull request & checkout to *`main`* branch
+
 
 ### Tasks for Job 02.1
 
@@ -232,7 +236,8 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 
 | No. | GUI | CLI |
 |:----|:----|:----|
-| 1 | N/A | N/A |
+| 1 | N/A | ![Job 02.1 - Tree - Screenshot](./.github/screenshots/job02.1_tree.png) |
+| 2 | N/A | ![Job 02.1 - Composer - Screenshot](./.github/screenshots/job02.1_composer.png) |
 
 > NOTE: (**N/A**) = not available ;)
 
