@@ -275,7 +275,7 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 | 2 | *`UserController.php`* | [Done](./src/Controller/UserController.php)\* |
 | 3 | *`UserModel.php`* | [Done](./src/Model/UserModel.php)\* |
 | 4 | *`index.php`* | [Done](./index.php) |
-| 5 | *`Final Commit & PR of 'feature/first-route' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/4 |
+| 5 | *`Final Commit & PR of 'feature/first-route' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/4) |
 
 > NOTE: (\*) = still needs to be updated
 
@@ -300,14 +300,14 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 
 ### Description of Job 02.3
 
-Switch to your main or master branch and pull in your latest changes. Create a new feature/register branch and switch to it.
+Switch to your main or master branch and pull in your latest changes. Create a new **feature/register** branch and switch to it.
 
 Why not register our users with a form?
 
 ### Requirements for Job 02.3
 
 1. Route **`/register`** with the verb *‘GET’* to display a registration form. The ﬁle containing the HTML for this form must be in a **`src/View/register.php`** ﬁle.
-2. Then do another route **`/register`** with the verb *'POST’* to process the form with a `register()` method in the **AuthController**. This method will need to instantiate a UserModel in order to check if the user does not already exist and also to insert the registered user into the database.
+2. Then do another route **`/register`** with the verb *'POST’* to process the form with a `register()` method in the **AuthController**. This method will need to instantiate a **UserModel** in order to check if the user does not already exist and also to insert the registered user into the database.
 3. Make a final commit and push your branch to the repo, make a pull request as before, and pull all changes to your main or master branch.
 
 > NOTE: At each validated step, make a commit.
@@ -319,8 +319,12 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`feature/register - Branch`* | *_In progress_* |
+| 2 | *`Register - (GET) Route`* | Pending |
+| 3 | *`Register - View`* | Pending |
+| 4 | *`AuthController`* | Pending |
+| 5 | *`Register - (POST) Route`* | Pending |
+| 5 | *`Final Commit & PR of 'feature/register' to 'main'`* | Pending |
 
 > NOTE: (\*) = still needs to be updated
 
