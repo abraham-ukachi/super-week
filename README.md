@@ -249,7 +249,7 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 
 ### Description of Job 02.2
 
-Switch to your main or master branch and pull in your latest changes. Create a new feature/ﬁrst-route branch and switch to it. Once this is done, we will create a route to retrieve all the users of our application.
+Switch to your main or master branch and pull in your latest changes. Create a new **feature/ﬁrst-route** branch and switch to it. Once this is done, we will create a route to retrieve all the users of our application.
 
 
 ### Requirements for Job 02.2
@@ -271,8 +271,10 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`feature/first-route - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/first-route) |
+| 2 | *`UserController.php`* | *_In progress_* |
+| 3 | *`UserModel.php`* | Pending |
+| 4 | *`index.php`* | Pending |
 
 > NOTE: (\*) = still needs to be updated
 
