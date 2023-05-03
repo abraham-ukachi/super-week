@@ -28,9 +28,9 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 |:----|:----|:-------|
 | 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
 | 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
-| 3 | [*`Job 01.5`*](#Job-01.5) | *_In progress_* |
-| 4 | [*`Job 02.1`*](#Job-02.1) | Pending |
-| 5 | [*`Job 02.2`*](#Job-02.2) | Pending |
+| 3 | [*`Job 01.5`*](#Job-01.5) | [Done](./database.sql) |
+| 4 | [*`Job 02.1`*](#Job-02.1) | [Done](./composer.json) |
+| 5 | [*`Job 02.2`*](#Job-02.2) | *_In progress_* |
 | 6 | [*`Job 02.3`*](#Job-02.3) | Pending |
 | 6 | [*`Job 02.4`*](#Job-02.4) | Pending |
 | 7 | [*`Job 03`*](#Job-03) | Pending |
