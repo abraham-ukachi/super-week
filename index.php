@@ -53,6 +53,15 @@ ini_set("display_errors", 1);
 // require the autoloader
 require __DIR__ . '/vendor/autoload.php';
 
+
+// use the `UserController`
+use App\Controller\UserController;
+
+
+
+
+
+
 // instantiate the `AltoRouter` class with an object named `router`
 $router = new AltoRouter();
 
@@ -63,6 +72,11 @@ const BASE_DIR = '/' . APP_NAME;
 
 // set the base path of our `router` using `BASE_DIR`
 $router->setBasePath(BASE_DIR);
+
+
+
+
+
 
 
 
@@ -106,9 +120,19 @@ $router->map('GET', '/', function() {
 $router->map('GET', '/users', function() {
   // Create a welcome message as per project requirement  
   $welcomeMessage = "Welcome to the user's list";
-  
+
   // Require the users page from 'View/'
   require __DIR__ . '/src/View/users.php';
+
+
+  // Instantiate the `UserController`
+  $userController = new UserController();
+
+  // get a list of all users as `usersList`
+  $usersList = $userController->list();
+
+  // echo the `usersList` in a paragraph tag
+  echo "<p>" . $usersList . "</p>";
 });
 
 
