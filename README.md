@@ -27,8 +27,8 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | No. | Job | Status |
 |:----|:----|:-------|
 | 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
-| 2 | [*`Job 01`*](#Job-01) | *_In progress_* |
-| 3 | [*`Job 01.5`*](#Job-01.5) | Pending |
+| 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
+| 3 | [*`Job 01.5`*](#Job-01.5) | *_In progress_* |
 | 4 | [*`Job 02.1`*](#Job-02.1) | Pending |
 | 5 | [*`Job 02.2`*](#Job-02.2) | Pending |
 | 6 | [*`Job 02.3`*](#Job-02.3) | Pending |
@@ -53,6 +53,7 @@ The folder & file structure of this project:
 - ...
 - LICENSE
 - README.md
+- .htaccess
 - **composer.json**
 - **index.php**
 
@@ -92,8 +93,7 @@ These are the following tasks of **Job 00** w/ their names and current status:
 
 | No. | GUI | CLI |
 |:----|:----|:--------|
-| 1 | ![Job 00 - ReadME of super-week](./.github/screenshots/job00_01.png) | N/A |
-
+| 1 | N/A | ![Job 00 - ReadME of super-week](./.github/screenshots/job00_01.png) |
 
 </details>
 
@@ -125,19 +125,21 @@ These are the following tasks of **Job 01** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *`feature/route - Branch`* | *_In progress_*
-| 2 | *`Composer & AutoLoader`* | Pending
-| 3 | *`AltoRouter - Installation`* | Pending
-| 4 | *`AltoRouter - Tests`* | Pending
-| 5 | *`Commit & PR from 'feature/router' to 'main'`* | Pending
+| 1 | *`feature/route - Branch`* | [Done](#Job-01)
+| 2 | *`Composer & AutoLoader`* | [Done](./composer.json)
+| 3 | *`AltoRouter - Installation`* | [Done](./composer.json)
+| 4 | *`AltoRouter - Tests`* | [Done](./index.php)
+| 5 | *`Commit & PR from 'feature/router' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/1)
 
 > NOTE: (\*) = still needs to be updated
 
-### Random Screenshots for Job 01
+### Random Screenshots & Giphy Captures for Job 01
 
 | No. | GUI | CLI |
 |:----|:----|:--------|
-| 1 | - | - |
+| 1 | N/A | ![Job 01 - Composer - Giphy Capture](./.github/gifs/job01_composer.gif) |
+| 2 | ![Job 01 GUI - Specific User Route](./.github/screenshots/job01_gui.png) | ![Job 01 CLI - Specific User Route](./.github/screenshots/job01_cli.png) 
+
 
 </details>
 
@@ -160,12 +162,11 @@ Now that we have a router, we can start setting up our database to prepare the r
     ○ *`content`*, text
     ○ *`id_user`*, int
 
-Once the database is created, you can start populating your database with fake data in phpmyadmin so you can play around with it a bit.
 
 
 ### Requirements for Job 01.5
 
-1. 
+1. Once the database is created, you can start populating your database with fake data in phpmyadmin so you can play around with it a bit.
 
 
 ### Tasks for Job 01.5
@@ -174,8 +175,8 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`database.sql`* | [Done](./database.sql)
+| 2 | *`Database.php`* | [Done](./src/Model/helpers/Database.php)\*
 
 > NOTE: (\*) = still needs to be updated
 
@@ -184,8 +185,8 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 ### Random Screenshots for Job 01.5
 
 | No. | GUI | CLI |
-|:----|:----|:--------|
-| 1 | - | - |
+|:----|:----|:----|
+| 1 | ![Job 01.5 - Database - Screenshot](./.github/screenshots/job01.5_db_gui.png) | ![Job 01.5 - Database - Giphy Capture](./.github/gifs/job01.5_db.gif) |
 
 
 </details>
