@@ -93,7 +93,7 @@ These are the following tasks of **Job 00** w/ their names and current status:
 
 | No. | GUI | CLI |
 |:----|:----|:--------|
-| 1 | ![Job 00 - ReadME of super-week](./.github/screenshots/job00_01.png) | N/A |
+| 1 | N/A | ![Job 00 - ReadME of super-week](./.github/screenshots/job00_01.png) |
 
 </details>
 
@@ -137,7 +137,7 @@ These are the following tasks of **Job 01** w/ their names and current status:
 
 | No. | GUI | CLI |
 |:----|:----|:--------|
-| 1 | **N/A** | ![Job 01 - Composer - Giphy Capture](./.github/gifs/job01_composer.gif) |
+| 1 | N/A | ![Job 01 - Composer - Giphy Capture](./.github/gifs/job01_composer.gif) |
 | 2 | ![Job 01 GUI - Specific User Route](./.github/screenshots/job01_gui.png) | ![Job 01 CLI - Specific User Route](./.github/screenshots/job01_cli.png) 
 
 
@@ -176,7 +176,7 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`database.sql`* | [Done](./database.sql)
-| 2 | *`Database.php`* | Pending
+| 2 | *`Database.php`* | [Done](./src/Model/helpers/Database.php)\*
 
 > NOTE: (\*) = still needs to be updated
 
