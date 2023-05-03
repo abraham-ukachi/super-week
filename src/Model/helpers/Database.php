@@ -168,7 +168,7 @@ class Database {
       $this->dbCreation();
     endif;
 
-   print_r($this->getTableQuery(self::TABLE_USERS));
+    /* print_r($this->getTableQuery(self::TABLE_USERS)); */
   } 
 
   // PUBLIC SETTERS
@@ -406,10 +406,10 @@ class Database {
       " . self::FIELD_ID . " INT(11) UNSIGNED AUTO_INCREMENT,
       " . self::FIELD_TITLE . " VARCHAR(255) NOT NULL,
       " . self::FIELD_CONTENT . " TEXT NOT NULL,
-      " . self::FIELD_ID_USER . " INT(11) NOT NULL,
+      " . self::FIELD_ID_USER . " INT(11) UNSIGNED NOT NULL,
       PRIMARY KEY (" . self::FIELD_ID . "),
-      FOREIGN KEY (" . self::FIELD_ID_USER . ") REFERENCES " . self::TABLE_USERS . "(" . self::FIELD_ID . ") ON DELETE CASCADE
-    )"; // <- TODO:? Specify an Engine like `innoDB`
+      FOREIGN KEY (" . self::FIELD_ID_USER . ") REFERENCES " . self::TABLE_USERS . " (" . self::FIELD_ID . ") ON DELETE CASCADE
+    ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci"; // <- TODO:? Specify an Engine like `innoDB`
   }
 
 
@@ -421,12 +421,13 @@ class Database {
    */
   private function getUsersTableQuery(): string {
     return "CREATE TABLE IF NOT EXISTS " . self::TABLE_USERS . " (
-      " . self::FIELD_ID . " INT(11) UNSIGNED AUTO_INCREMENT,
+      " . self::FIELD_ID . " INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
       " . self::FIELD_EMAIL . " VARCHAR(255) NOT NULL,
       " . self::FIELD_FIRST_NAME . " VARCHAR(255) NOT NULL,
       " . self::FIELD_LAST_NAME . " VARCHAR(255) NOT NULL,
-      PRIMARY KEY (" . self::FIELD_ID . ")
-    )"; // <- TODO:? Specify an Engine like `innoDB`
+      PRIMARY KEY (" . self::FIELD_ID . "),
+      UNIQUE KEY `users_email_unique` (" . self::FIELD_EMAIL . ") 
+    ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci"; // <- TODO:? Specify an Engine like `innoDB`
   }
 
 
