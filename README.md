@@ -30,8 +30,8 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
 | 3 | [*`Job 01.5`*](#Job-015) | [Done](./database.sql) |
 | 4 | [*`Job 02.1`*](#Job-021) | [Done](./composer.json) |
-| 5 | [*`Job 02.2`*](#Job-022) | *_In progress_* |
-| 6 | [*`Job 02.3`*](#Job-023) | Pending |
+| 5 | [*`Job 02.2`*](#Job-022) | [Done](./src/Controller/UserController.php) |
+| 6 | [*`Job 02.3`*](#Job-023) | *_In progress_* |
 | 6 | [*`Job 02.4`*](#Job-024) | Pending |
 | 7 | [*`Job 03`*](#Job-03) | Pending |
 | 8 | [*`Job 04`*](#Job-04) | Pending |
