@@ -274,7 +274,8 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 | 1 | *`feature/first-route - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/first-route) |
 | 2 | *`UserController.php`* | [Done](./src/Controller/UserController.php)\* |
 | 3 | *`UserModel.php`* | [Done](./src/Model/UserModel.php)\* |
-| 4 | *`index.php`* | Pending |
+| 4 | *`index.php`* | [Done](./index.php) |
+| 5 | *`Final Commit & PR of 'feature/route' to 'main'`* | Pending |
 
 > NOTE: (\*) = still needs to be updated
 
@@ -283,7 +284,7 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 ### Random Screenshots for Job 02.2
 
 | No. | GUI | CLI |
-|:----|:----|:--------|
+|:----|:----|:----|
 | 1 | - | - |
 | 2 | - | - |
 
