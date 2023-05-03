@@ -176,7 +176,7 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`database.sql`* | [Done](./database.sql)
-| 2 | *`Database.php`* | [Done](./src/Model/helpers/Database.php)\*
+| 2 | *`Database.php`* | [Done](./src/Model/Helper/Database.php)\*
 
 > NOTE: (\*) = still needs to be updated
 
@@ -198,7 +198,7 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 
 ### Description of Job 02.1
 
-Switch to your main or master branch and pull in your latest changes. Create a new feature/project-design branch and switch to it.
+Switch to your main or master branch and pull in your latest changes. Create a new **feature/project-design** branch and switch to it.
 
 We have a database, we have a router, we are ready to develop our application. For this we will start to structure our folders with a **`src/`** folder at the root of our project. In this folder we will add 3 sub-folders: **`Model/`**, **`Controller/`**, **`View/`**.
 
@@ -220,8 +220,9 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`feature/project-design - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/project-design) |
+| 2 | **`Model/`**, **`View/`**, **`Controller/`** in **`src/`** | [Done](./src) |
+| 3 | *`Update namespaces in composer.json`* | [Done](./composer.json) | 
 
 > NOTE: (\*) = still needs to be updated
 
@@ -230,9 +231,10 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 ### Random Screenshots for Job 02.1
 
 | No. | GUI | CLI |
-|:----|:----|:--------|
-| 1 | - | - |
+|:----|:----|:----|
+| 1 | N/A | N/A |
 
+> NOTE: (**N/A**) = not available ;)
 
 </details>
 
@@ -533,7 +535,7 @@ open http://localhost/super-week
 
 | Browser | Version | Status | Date | Time
 |:--------|:--------|:-------|:-----|:-----
-| *`Arc`* | **-** | *Pending* | - | -
+| *`Arc`* | **0.98.2** | [Tested](http://localhost/super-week) | 03/05/2023 | 11:28 AM
 | *`Brave`* | **-** | *Pending* | - | -
 | *`Chrome`* | **-** | *Pending* | - | -
 | *`Firefox`* | **-** | *Pending* | - | - 
