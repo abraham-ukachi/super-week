@@ -8,7 +8,17 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Abrahamukachi\\SuperWeek\\": "src/"
+            "App\\": "src/",
+
+            "App\\Model\\": "src/Model/",
+            "App\\Model\\Helper\\": "src/Model/Helper/",
+            "App\\Model\\Helper\\Test\\": "src/Model/Helper/test/",
+
+            "App\\View\\": "src/View/",
+
+            "App\\Controller\\": "src/Controller/",
+            "App\\Controller\\Helper\\": "src/Controller/Helper/",
+            "App\\Controller\\Helper\\Test\\": "src/Controller/Helper/test/"
         }
     },
     "authors": [

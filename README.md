@@ -28,9 +28,9 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 |:----|:----|:-------|
 | 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
 | 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
-| 3 | [*`Job 01.5`*](#Job-01.5) | *_In progress_* |
-| 4 | [*`Job 02.1`*](#Job-02.1) | Pending |
-| 5 | [*`Job 02.2`*](#Job-02.2) | Pending |
+| 3 | [*`Job 01.5`*](#Job-01.5) | [Done](./database.sql) |
+| 4 | [*`Job 02.1`*](#Job-02.1) | [Done](./composer.json) |
+| 5 | [*`Job 02.2`*](#Job-02.2) | *_In progress_* |
 | 6 | [*`Job 02.3`*](#Job-02.3) | Pending |
 | 6 | [*`Job 02.4`*](#Job-02.4) | Pending |
 | 7 | [*`Job 03`*](#Job-03) | Pending |
@@ -176,7 +176,7 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`database.sql`* | [Done](./database.sql)
-| 2 | *`Database.php`* | [Done](./src/Model/helpers/Database.php)\*
+| 2 | *`Database.php`* | [Done](./src/Model/Helper/Database.php)\*
 
 > NOTE: (\*) = still needs to be updated
 
@@ -198,7 +198,7 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 
 ### Description of Job 02.1
 
-Switch to your main or master branch and pull in your latest changes. Create a new feature/project-design branch and switch to it.
+Switch to your main or master branch and pull in your latest changes. Create a new **feature/project-design** branch and switch to it.
 
 We have a database, we have a router, we are ready to develop our application. For this we will start to structure our folders with a **`src/`** folder at the root of our project. In this folder we will add 3 sub-folders: **`Model/`**, **`Controller/`**, **`View/`**.
 
@@ -212,7 +212,11 @@ Make a commit and push your branch to the repo, make a pull request as before, a
 
 ### Requirements for Job 02.1
 
-- 
+1. Create & switch to a *`feature/project-design`* branch 
+2. Create `Model/`, `Controller/` and `View/` folders in `src/`
+3. Add corresponding MVC namespaces to **composer.json** and update it using `dumpautoload`
+4. Create a pull request & checkout to *`main`* branch
+
 
 ### Tasks for Job 02.1
 
@@ -220,8 +224,9 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`feature/project-design - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/project-design) |
+| 2 | **`Model/`**, **`View/`**, **`Controller/`** in **`src/`** | [Done](./src) |
+| 3 | *`Update namespaces in composer.json`* | [Done](./composer.json) | 
 
 > NOTE: (\*) = still needs to be updated
 
@@ -230,9 +235,11 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 ### Random Screenshots for Job 02.1
 
 | No. | GUI | CLI |
-|:----|:----|:--------|
-| 1 | - | - |
+|:----|:----|:----|
+| 1 | N/A | ![Job 02.1 - Tree - Screenshot](./.github/screenshots/job02.1_tree.png) |
+| 2 | N/A | ![Job 02.1 - Composer - Screenshot](./.github/screenshots/job02.1_composer.png) |
 
+> NOTE: (**N/A**) = not available ;)
 
 </details>
 
@@ -533,7 +540,7 @@ open http://localhost/super-week
 
 | Browser | Version | Status | Date | Time
 |:--------|:--------|:-------|:-----|:-----
-| *`Arc`* | **-** | *Pending* | - | -
+| *`Arc`* | **0.98.2** | [Tested](http://localhost/super-week) | 03/05/2023 | 11:28 AM
 | *`Brave`* | **-** | *Pending* | - | -
 | *`Chrome`* | **-** | *Pending* | - | -
 | *`Firefox`* | **-** | *Pending* | - | - 
