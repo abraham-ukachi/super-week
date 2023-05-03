@@ -185,8 +185,8 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 ### Random Screenshots for Job 01.5
 
 | No. | GUI | CLI |
-|:----|:----|:--------|
-| 1 | - | - |
+|:----|:----|:----|
+| 1 | ![Job 01.5 - Database - Screenshot](./.github/screenshots/job01.5_db_gui.png) | ![Job 01.5 - Database - Giphy Capture](./.github/gifs/job01.5_db.gif) |
 
 
 </details>
