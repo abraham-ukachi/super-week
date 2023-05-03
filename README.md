@@ -256,9 +256,9 @@ Switch to your main or master branch and pull in your latest changes. Create a n
 
 1. Map a new route **`/users`**
 2. Instantiate a new *UserController*
-3. Create and call the list method of your *UserController*
+3. Create and call the `list()` method of your *UserController*
 4. In this method, instantiate a new *UserModel*
-5. Launch a findAll method which retrieves all the users present in the database and returns them in the form of an associative array to the controller
+5. Launch a `findAll()` method which retrieves all the users present in the database and returns them in the form of an associative array to the controller
 6. With your Controller, return your table by encoding it in JSON format
 7. And in your index echo your return
 8. Make a final commit and push your branch to the repo, make a pull request as before, and pull all changes to your main or master branch.
@@ -272,7 +272,7 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`feature/first-route - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/first-route) |
-| 2 | *`UserController.php`* | *_In progress_* |
+| 2 | *`UserController.php`* | [Done](./src/Controller/UserController.php)\* |
 | 3 | *`UserModel.php`* | [Done](./src/Model/UserModel.php)\* |
 | 4 | *`index.php`* | Pending |
 
