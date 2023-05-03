@@ -74,7 +74,7 @@ body {
   /* Support for IE. */
   font-feature-settings: 'liga';
 
-  overflow: hidden;
+  overflow: auto;
 }
 
 
@@ -89,6 +89,8 @@ code {
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   overflow: hidden;
+  height: 1rem;
+  min-height: 1rem;
 }
 
 /* Span in Code */
@@ -106,4 +108,9 @@ h1 {
   font-size: 3rem;
 }
 
-
+p {
+  word-wrap: break-word;
+  opacity: 0.6;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}

@@ -28,14 +28,14 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 |:----|:----|:-------|
 | 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
 | 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
-| 3 | [*`Job 01.5`*](#Job-01.5) | [Done](./database.sql) |
-| 4 | [*`Job 02.1`*](#Job-02.1) | [Done](./composer.json) |
-| 5 | [*`Job 02.2`*](#Job-02.2) | *_In progress_* |
-| 6 | [*`Job 02.3`*](#Job-02.3) | Pending |
-| 6 | [*`Job 02.4`*](#Job-02.4) | Pending |
+| 3 | [*`Job 01.5`*](#Job-015) | [Done](./database.sql) |
+| 4 | [*`Job 02.1`*](#Job-021) | [Done](./composer.json) |
+| 5 | [*`Job 02.2`*](#Job-022) | *_In progress_* |
+| 6 | [*`Job 02.3`*](#Job-023) | Pending |
+| 6 | [*`Job 02.4`*](#Job-024) | Pending |
 | 7 | [*`Job 03`*](#Job-03) | Pending |
 | 8 | [*`Job 04`*](#Job-04) | Pending |
-| 9 | [*`Job +`*](#Job-+) | Pending |
+| 9 | [*`Job +`*](#Job-) | Pending |
 
 
 > NOTE: (\*) = still needs to be updated \
@@ -249,16 +249,16 @@ These are the following tasks of **Job 02.1** w/ their names and current status:
 
 ### Description of Job 02.2
 
-Switch to your main or master branch and pull in your latest changes. Create a new feature/ﬁrst-route branch and switch to it. Once this is done, we will create a route to retrieve all the users of our application.
+Switch to your main or master branch and pull in your latest changes. Create a new **feature/ﬁrst-route** branch and switch to it. Once this is done, we will create a route to retrieve all the users of our application.
 
 
 ### Requirements for Job 02.2
 
 1. Map a new route **`/users`**
 2. Instantiate a new *UserController*
-3. Create and call the list method of your *UserController*
+3. Create and call the `list()` method of your *UserController*
 4. In this method, instantiate a new *UserModel*
-5. Launch a findAll method which retrieves all the users present in the database and returns them in the form of an associative array to the controller
+5. Launch a `findAll()` method which retrieves all the users present in the database and returns them in the form of an associative array to the controller
 6. With your Controller, return your table by encoding it in JSON format
 7. And in your index echo your return
 8. Make a final commit and push your branch to the repo, make a pull request as before, and pull all changes to your main or master branch.
@@ -271,8 +271,11 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`feature/first-route - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/first-route) |
+| 2 | *`UserController.php`* | [Done](./src/Controller/UserController.php)\* |
+| 3 | *`UserModel.php`* | [Done](./src/Model/UserModel.php)\* |
+| 4 | *`index.php`* | [Done](./index.php) |
+| 5 | *`Final Commit & PR of 'feature/first-route' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/4 |
 
 > NOTE: (\*) = still needs to be updated
 
@@ -281,10 +284,12 @@ These are the following tasks of **Job 02.2** w/ their names and current status:
 ### Random Screenshots for Job 02.2
 
 | No. | GUI | CLI |
-|:----|:----|:--------|
-| 1 | - | - |
-| 2 | - | - |
+|:----|:----|:----|
+| 1 | ![Job 02.2 - GUI - Screenshot](./.github/screenshots/job02.2_gui.png) | ![Job 02.2 - CLI - Screenshot](./.github/screenshots/job02.2_cli.png) |
+| 2 | N/A | N/A |
 
+
+> NOTE: (**N/A**) = not available ;)
 
 </details>
 
@@ -559,7 +564,9 @@ These are some of the things I did in addition to this project's [job requiremen
 
 | No. | Name | File | Status |
 |:----|:-----|:-----|:-------|
-| 1 | *`?? - Page`* | **??-page.js** | Pending |
+| 1 | *`Database - Test`* | **database.php** | [Done](./src/Model/Helper/test/database.php)\* |
+| 2 | *`User Model - Test`* | **user_model.php** | [Done](./src/Model/test/user_model.php)\* |
+| 3 | *`??`* | **??** | ?? | 
 
 
 > NOTE: (\*) = still needs to be updated. <br>
