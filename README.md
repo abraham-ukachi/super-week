@@ -320,9 +320,9 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`feature/register - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/register) |
-| 2 | *`Register - (GET) Route`* | *_In progress_* |
-| 3 | *`Register - View`* | Pending |
-| 4 | *`AuthController`* | Pending |
+| 2 | *`Register - (GET) Route`* | [Done](./index.php) |
+| 3 | *`Register - View`* | [Done](./src/View/register.php)\* |
+| 4 | *`AuthController`* | *_In progress_* |
 | 5 | *`Register - (POST) Route`* | Pending |
 | 5 | *`Final Commit & PR of 'feature/register' to 'main'`* | Pending |
 
