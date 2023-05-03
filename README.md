@@ -28,7 +28,7 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 |:----|:----|:-------|
 | 1 | [*`Job 00`*](#Job-00) | [Done](./README.md) |
 | 2 | [*`Job 01`*](#Job-01) | [Done](./index.php) |
-| 3 | [*`Job 01.5`*](#Job-01.5) | Pending |
+| 3 | [*`Job 01.5`*](#Job-01.5) | *_In progress_* |
 | 4 | [*`Job 02.1`*](#Job-02.1) | Pending |
 | 5 | [*`Job 02.2`*](#Job-02.2) | Pending |
 | 6 | [*`Job 02.3`*](#Job-02.3) | Pending |
@@ -162,12 +162,11 @@ Now that we have a router, we can start setting up our database to prepare the r
     ○ *`content`*, text
     ○ *`id_user`*, int
 
-Once the database is created, you can start populating your database with fake data in phpmyadmin so you can play around with it a bit.
 
 
 ### Requirements for Job 01.5
 
-1. 
+1. Once the database is created, you can start populating your database with fake data in phpmyadmin so you can play around with it a bit.
 
 
 ### Tasks for Job 01.5
@@ -176,8 +175,8 @@ These are the following tasks of **Job 01.5** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`database.sql`* | [Done](./database.sql)
+| 2 | *`Database.php`* | Pending
 
 > NOTE: (\*) = still needs to be updated
 
