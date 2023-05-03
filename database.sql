@@ -49,7 +49,7 @@ USE `super_week`;
 /* CREATE `users` TABLE */
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `email` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
@@ -63,10 +63,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 /* CREATE `tasks` TABLE */
 
 CREATE TABLE IF NOT EXISTS `books` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `content` text COLLATE utf8_unicode_520_ci NOT NULL,
-  `id_user` int(11) NOT NULL,
+  `id_user` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
