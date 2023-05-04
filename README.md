@@ -335,7 +335,7 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 | No. | GUI | CLI |
 |:----|:----|:--------|
 | 1 | N/A | ![Faker - CLI - Screenshot](./.github/screenshots/job02.3_faker_cli.png) |
-| 2 | N/A | N/A |
+| 2 | N/A | ![Faker - Books - CLI - Screenshot](./.github/screenshots/job02.3_faker_books_cli.png) |
 | 3 | N/A | N/A |
 
 
