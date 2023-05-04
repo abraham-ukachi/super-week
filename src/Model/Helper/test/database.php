@@ -47,10 +47,12 @@
 namespace App\Model\Helper\Test;
 
 // require the `Database.php` file
-require '../Database.php';
+//require '../Database.php';
+require_once __DIR__ . '/../../../../vendor/autoload.php';
 
 // use the `Database` from Model Helper
 use App\Model\Helper\Database;
+use Faker\Factory;
 
 // use some PHP core classes
 use pdo;
@@ -59,6 +61,9 @@ use pdo;
 
 // Instantiate an object of the `Database` class as `database`
 $database = new Database(Database::TYPE_PDO); // <- pdo or mysqli ;)
+
+$faker = Factory::create('en_GB'); // <- use the factory to create a Faker\Generator instance. 
+// ^^^^^^ TRY: 'fr_FR' or 'en_US' or 'en_GB' or 'en_CA' or 'en_AU' or 'en_NZ' or 'ja_JP' or 'pt_BR' or 'ru_RU' or 'zh_CN' or 'zh_TW'
 
 // $database->setDatabaseUsername('abraham-ukachi');
 // $database->setDatabasePassword('root');
@@ -177,3 +182,65 @@ if ($result) {
 }
 
 endif; // <- ========[ End of Test #2 ]===========
+
+
+
+
+// ===================== TEST #3 ========================
+// ==========[ FAKE POPULATE THE USERS TABLE ]===========
+// ======================================================
+
+if ($hasTestArg && $testArg === 'test3') :
+
+  // get the number of rows to populate from the user's input, or default to 10
+  $rowsToPopulate = isset($argv[2]) ? $argv[2] : 10;
+  
+  // loop through the number of rows to populate
+  for ($n = 0; $n < $rowsToPopulate; $n++) {
+    // generate some fake data
+    $firstName = $faker->firstName();
+    $lastName = $faker->lastName();
+    $email = $faker->unique->email();
+    $password = $faker->password();
+
+    // create a `create_user_query` sql query
+    $create_user_query = sprintf(<<<SQL
+      INSERT INTO `%s` 
+        (%s, %s, %s, %s)
+      VALUES
+        (:email, :first_name, :last_name, :password)
+      SQL, 
+
+      // table
+      Database::TABLE_USERS,
+
+      // fields
+      Database::FIELD_EMAIL,
+      Database::FIELD_FIRST_NAME,
+      Database::FIELD_LAST_NAME,
+      Database::FIELD_PASSWORD
+    );
+
+
+    // Prepare the `create_user_query` sql query as a PDO statement (i.e. $pdo_stmt)
+    $pdo_stmt = $database->pdo->prepare($create_user_query);
+
+    // execute the `$pdo_stmt` with the fake data
+    $result = $pdo_stmt->execute([
+      ':email' => $email,
+      ':first_name' => $firstName,
+      ':last_name' => $lastName,
+      ':password' => $password
+    ]);
+
+
+    // DEBUG [4dbsmaster]: tell me about the result
+    printf("\n\x1b[2m\x1b[33m[DB](TEST3|FAKER): email (\x1b[0m\x1b[4m\x1b[33m%s\x1b[0m\x1b[2m\x1b[33m) and password (\x1b[0m\x1b[4m\x1b[33m%s\x1b[0m\x1b[2m\x1b[33m) have been added to the database successfully @ row \x1b[0m\x1b[1m#%d\x1b[2m\x1b[33m :) \x1b[0m\n", $email, $password, $n + 1);
+
+  }
+
+
+  // DEBUG [4dbsmaster]: tell me about it ;)
+  printf("\x1b[35m[DB] (TEST3|FAKER): %d users have been added to the database!!! \x1b[0m", $rowsToPopulate);
+
+endif; // <- ========[ End of Test #3 ]===========
