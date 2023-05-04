@@ -323,8 +323,8 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 | 1 | *`feature/register - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/register) |
 | 2 | *`Register - (GET) Route`* | [Done](./index.php) |
 | 3 | *`Register - View`* | [Done](./src/View/register.php)\* |
-| 4 | *`AuthController`* | *_In progress_* |
-| 5 | *`Register - (POST) Route`* | Pending |
+| 4 | *`AuthController`* | [Done](./src/Controller/AuthController.php)\* |
+| 5 | *`Register - (POST) Route`* | *_In progress_* |
 | 6 | *`Final Commit & PR of 'feature/register' to 'main'`* | Pending |
 
 > NOTE: (\*) = still needs to be updated
