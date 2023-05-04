@@ -325,7 +325,7 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 | 3 | *`Register - View`* | [Done](./src/View/register.php)\* |
 | 4 | *`AuthController`* | [Done](./src/Controller/AuthController.php)\* |
 | 5 | *`Register - (POST) Route`* | [Done](./index.php) |
-| 6 | *`Final Commit & PR of 'feature/register' to 'main'`* | Pending |
+| 6 | *`Final Commit & PR of 'feature/register' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/7) |
 
 > NOTE: (\*) = still needs to be updated
 
