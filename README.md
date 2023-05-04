@@ -32,7 +32,7 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | 4 | [*`Job 02.1`*](#Job-021) | [Done](./composer.json) |
 | 5 | [*`Job 02.2`*](#Job-022) | [Done](./src/Controller/UserController.php) |
 | 6 | [*`Job 02.3`*](#Job-023) | [Done](./src/Controller/AuthController.php) |
-| 6 | [*`Job 02.4`*](#Job-024) | Pending |
+| 6 | [*`Job 02.4`*](#Job-024) | *_In progress_* |
 | 7 | [*`Job 03`*](#Job-03) | Pending |
 | 8 | [*`Job 04`*](#Job-04) | Pending |
 | 9 | [*`Job +`*](#Job-) | Pending |
