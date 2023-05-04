@@ -40,6 +40,17 @@
 
 
 :root {
+
+  --primary-color: #FFB86B;
+  --on-primary-color: #4A2800;
+  --primary-container-color: #6A3C00;
+  --on-primary-container-color: #FFDCBA;
+
+  --background-color: #201A17;
+  --on-background-color: #ECE0DB;
+  --outline-color: #9E8E81;
+
+
   width: 100%;
   height: 100%;
 }
@@ -55,9 +66,9 @@ body {
   padding: 1.25rem;
   box-sizing: border-box;
   font-family: 'Mulish';
-  background-color: var(--background-color, #201A17);
-  color: var(--on-background-color, #ECE0DB);
-  fill: var(--on-background-color, #ECE0DB);
+  background-color: var(--background-color);
+  color: var(--on-background-color);
+  fill: var(--on-background-color);
    
   /* Support for all Webkit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -83,7 +94,7 @@ code {
   position: relative;
   top: 1rem;
   font-size: 1rem;
-  color: var(--primary-color, #FFB86B);
+  color: var(--primary-color);
   width: fit-content;
   background: black;
   padding: 0.5rem 1rem;
@@ -98,8 +109,8 @@ code > span {
   padding: 0.5rem;
   right: -1rem;
   position: relative;
-  background-color: var(--primary-color, #FFB86B);
-  color: var(--background-color, #201A17);
+  background-color: var(--primary-color);
+  color: var(--background-color);
   font-weight: bold;
 }
 
@@ -114,3 +125,254 @@ p {
   font-size: 1.25rem;
   line-height: 2rem;
 }
+
+
+
+/* ===<<< Form ..+.. Input Default Styles >>>=== */
+
+/* Form Styles */
+form {
+  --icon-button-size: 30px;
+  --icon-button-padding: 4px;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  max-width: var(--form-max-width, 450px);
+  margin: 24px auto;
+}
+
+
+
+/* all labels next to an input */
+label {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
+
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+
+/* Labels with [raised] attribute / property */
+label[raised] {
+  transform: translateY(-18px);
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1.2px;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 12px 0 24px;
+  overflow: visible;
+  
+  -webkit-transition: margin .2s ease;
+  -moz-transition: margin .2s ease;
+  transition: margin .2s ease;
+}
+
+/* If the Input Wrapper has an error */
+.input-wrapper[has-error] {
+  margin-bottom: var(--input-wrapper-error-margin, 48px);
+}
+
+/* Input Styles */
+input {
+  background: inherit;
+  color: inherit;
+  border: 0;
+  outline: 0;
+  flex: 1;
+  margin-bottom: 8px;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+/* Password Input */
+input[type="password"] {}
+
+/* Submit Button / Inputs & Outlined Buttons */
+input[type="submit"], button[outlined], a[role="button"][outlined] {
+  border: 2px solid var(--outline-color);
+  border-radius: 0.75rem;
+  padding: 8px 16px;
+  opacity: var(--opacity-text-inactive, 0.6);
+  cursor: pointer;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  background: inherit;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+/* Hovered / Focused Submit Input & Outlined Buttons */
+input[type="submit"]:hover, input[type="submit"]:focus,
+button[outlined]:hover, a[role="button"][outlined]:focus {
+  opacity: 1;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* [contained] submit input  */
+input[type="submit"][contained] {
+  background: var(--primary-color);
+  color: var(--on-primary-color);
+  border: 0;
+}
+
+/* Contained Button */
+button[contained], a[role="button"][contained] {
+  background: var(--button-background-color, var(--primary-container-color));
+  color: var(--button-text-color, var(--on-primary-container-color));
+  padding: var(--button-padding, 6px 12px);
+  border-radius: 8px;
+  font-size: 18px; /* b4: 16px */
+  line-height: 32px;
+  width: var(--button-width, 100%);
+  height: var(--button-height, inherit);
+  border: 0;
+  outline: none;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+/* Whenever a button that expands is hovered and/or gains focus */
+button[contained][expands]:hover, a[role="button"][contained][expands]:hover,
+button[contained][expands]:focus-visible, a[role="button"][contained][expands]:focus-visible {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Whenever a button that shrinks is pressed */
+button[contained][shrinks]:active, a[role="button"][contained][shrinks]:active {
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+
+
+/* Contained Button on hover */
+button[contained]:hover, a[role="button"][contained]:hover {
+  text-decoration: none;
+  background: var(--button-background-color-hover, var(--primary-color));
+  color: var(--button-text-color-hover, var(--on-primary-color));
+}
+
+/* Whenever a contained button gains focus */
+button[contained]:focus-visible, a[role="button"][contained]:focus-visible {
+  outline: none;
+  background: var(--button-color-focus, var(--tertiary-color));
+  color: var(--button-color-focus, var(--on-tertiary-color));
+}
+
+/* Iput Indicator */
+.input-indicator {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+  /* margin: 8px 0; */
+}
+
+/* Error style of Input Indicator */
+.input-indicator.error {
+  --input-indicator-color: var(--error-color);
+}
+
+/* Bar of Input Indicator*/
+.input-indicator span[bar] {
+  width: inherit;
+  height: inherit;
+  background: var(--outline-color);
+  display: block;
+  opacity: var(--opacity-md-icon-inactive);
+}
+
+/* Value of Input Indicator */
+.input-indicator span[val] {
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  height: inherit;
+  width: 0%;
+  background: var(--input-indicator-color, var(--primary-color));
+  opacity: 0;
+
+  -webkit-transition: width .2s ease, opacity .3s ease ;
+  -moz-transition: width .2s ease, opacity .3s ease;
+  transition: width .2s ease, opacity .3s ease;
+}
+
+
+/* Set the width of the indicator value (i.e. span[val]) to 100%:
+ * 1. whenever an input inside a form gains focus
+ * 2. if the input indicator has a `no-effect` attribute
+ * */
+input:focus ~ .input-indicator > span[val], .input-indicator[no-effect] span[val]  {
+  width: 100%;
+  opacity: 1;
+}
+
+
+/* Input Message */
+p.input-message {
+  margin: 8px 4px;
+  width: 100%;
+  height: 35px;
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  box-sizing: border-box;
+  left: 0;
+  color: var(--error-color);
+  transform: translateY(150%);
+  line-height: 16px;
+  pointer-events: none;
+}
+
+/* ===>>> End of Form ..+.. Input Default Styles  <<<=== */
+
+

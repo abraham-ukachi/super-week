@@ -139,6 +139,26 @@ $router->map('GET', '/users', function() {
 
 
 /**
+ * Route that displays a register form,
+ * and allows a user to get registered
+ *
+ * @example http://localhost/super-week/register
+ *
+ * @method GET
+ * @route '/register'
+ */
+$router->map('GET', '/register', function() {
+
+  // TODO: ? Create & Instantiate a RegisterController
+  
+  // display the register page from the `View/` folder
+  require __DIR__ . '/src/View/register.php';
+});
+
+
+
+
+/**
  * Route that displays a specific user's page
  *
  * @example http://localhost/super-week/users/3
