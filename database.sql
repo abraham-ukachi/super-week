@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
