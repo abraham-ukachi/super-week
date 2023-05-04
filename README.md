@@ -314,6 +314,7 @@ Why not register our users with a form?
 
 
 ### Tasks for Job 02.3
+> ⬆️ UPDATE: A `feature/database` branch was created to add a **\`password\`** table to **`users`** table and generate fake data using `FakerPHP`.
 
 These are the following tasks of **Job 02.3** w/ their names and current status:
 
@@ -322,21 +323,23 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 | 1 | *`feature/register - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/register) |
 | 2 | *`Register - (GET) Route`* | [Done](./index.php) |
 | 3 | *`Register - View`* | [Done](./src/View/register.php)\* |
-| 4 | *`AuthController`* | *_In progress_* |
-| 5 | *`Register - (POST) Route`* | Pending |
-| 5 | *`Final Commit & PR of 'feature/register' to 'main'`* | Pending |
+| 4 | *`AuthController`* | [Done](./src/Controller/AuthController.php)\* |
+| 5 | *`Register - (POST) Route`* | [Done](./index.php) |
+| 6 | *`Final Commit & PR of 'feature/register' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/7) |
 
 > NOTE: (\*) = still needs to be updated
 
 
 
-### Random Screenshots for Job 02.3
+### Random Screenshots & Giphy Captures for Job 02.3
 
 | No. | GUI | CLI |
 |:----|:----|:--------|
 | 1 | N/A | ![Faker - CLI - Screenshot](./.github/screenshots/job02.3_faker_cli.png) |
 | 2 | N/A | ![Faker - Books - CLI - Screenshot](./.github/screenshots/job02.3_faker_books_cli.png) |
-| 3 | N/A | N/A |
+| 3 | N/A | ![FINDBYEMAIL - User Model Test - CLI - Giphy Capture](./.github/gifs/job02.3_test_findByEmail.gif) |
+| 4 | ![Register - Success - GUI - Screenshot](./.github/screenshots/job02.3_register_success_gui.png) | ![Register - CLI - Screenshot](./.github/screenshots/job02.3_register_cli.png) |
+| 5 | N/A | N/A |
 
 
 </details>

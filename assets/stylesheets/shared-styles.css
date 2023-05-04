@@ -376,3 +376,68 @@ p.input-message {
 /* ===>>> End of Form ..+.. Input Default Styles  <<<=== */
 
 
+
+[hidden] {
+  display: none !important;
+}
+
+
+/* ===>>> STATUS MESSAGES <<<=== */
+
+.status-messages {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.status-message {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  background: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+  font-weight: bold;
+  color: inherit;
+
+  outline: 3px solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.status-message > .icon {
+  color: inherit;
+  margin: 0.3rem 0.5rem;
+}
+
+.status-message > .message {
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.error.status-message {
+  background: #380000;
+  color: red;
+  border-color: red;
+}
+
+.success.status-message {
+  background: #003800;
+  color: #33c533;
+  border-color: #33c533;
+}
+
+.success .icon {
+  color: #78ce78;
+}
+
+
+
+/* === END OF STATUS MESSAGES === */

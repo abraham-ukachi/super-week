@@ -37,17 +37,25 @@
  * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  */
 
+
+
+// declare the namespace of this models test
+namespace App\Model\Test;
+
+
 // ==== Display all PHP errors and warnings ====
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 // =============================================
 
-// declare the namespace of this models test
-namespace App\Model\Test;
 
 // require the `autoload.php` file
 require_once __DIR__ . '/../../../vendor/autoload.php';
+
+// set the default timezone to 'Europe/Paris'
+date_default_timezone_set('Europe/Paris');
+
 
 // require the `UserModel.php` file
 // require_once '../UserModel.php';
@@ -55,6 +63,7 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 
 // use the `UserModel` from the `App\Model` namespace
 use App\Model\UserModel;
+use Faker\Factory;
 
 // use some PHP core classes
 //use pdo;
@@ -63,7 +72,7 @@ use App\Model\UserModel;
 
 // Create an object of the `UserModel` class as `userModel`
 $userModel = new UserModel();
-
+$faker = Factory::create(); // <- use the factory to create a Faker\Generator instance named `$faker`
 
 // DEBUG [4dbsmaster]: tell me about it ;)
 printf("\n\x1b[34m[UserModel - Test]: Welcome 👋🏽 !!!\x1b[0m\n");
@@ -95,16 +104,151 @@ if ($hasTestArg && in_array($testArg, ['findAll', 'test1'])) :
   print_r($allUsers);
     
 
-endif; // <- ========[ End of Test #1 / findAll ]===========
+endif; 
+// <- ========[ End of Test #1 / findAll ]===========
 
 
 
 
 // ===================== TEST #2 ========================
-// ==[  ]==
+// ================[ CREATE A NEW USER ]=================
 // ======================================================
 
-if ($hasTestArg && in_array($testArg, ['test2'])) :
+if ($hasTestArg && in_array($testArg, ['create', 'test2'])) :
+  // generate some fake user data with a unique email
+  $email = $faker->unique()->email();
+  $firstName = $faker->firstName();
+  $lastName = $faker->lastName();
+  $password = $faker->password();
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+  
+  // create a new user with the fake data
+  $newUser = $userModel->create($email, $firstName, $lastName, $hashedPassword);
+
+  // If a new user was created...
+  if ($newUser) {
+    // ...IDEA: log this user in a `test2.log` file
+
+    // Create a `log` string variable
+    $log = sprintf(<<<LOG
+    
+    === "[New User Created]" ===
+    id_user: %d
+    email: %s
+    first_name: %s
+    last_name: %s
+    password: %s
+    hashedPassword: %s
+    =========================
+
+    LOG,
+
+    $newUser['id'],
+    $newUser['email'],
+    $newUser['first_name'],
+    $newUser['last_name'],
+    $password,
+    $newUser['password']
+
+    );
+
+    // Append this `log` in a `test2.log` file
+    file_put_contents('test2.log', $log, FILE_APPEND);
+
+    // DEBUG [4dbsmaster]: tell me about the new user
+    printf("\n\x1b[2m\x1b[33m[USER-MODEL](TEST2|CREATE): email (\x1b[0m\x1b[4m\x1b[33m%s\x1b[0m\x1b[2m\x1b[33m) and password (\x1b[0m\x1b[4m\x1b[33m%s\x1b[0m\x1b[2m\x1b[33m) of \x1b[0m\x1b[1m%s\x1b[2m\x1b[33m have been added to the database successfully :) \x1b[0m\n", $email, $password, $firstName . ' ' . $lastName);
+
+  } else { // <- error creating new user
+
+    // DEBUG [4dbsmaster]: tell me about the error
+    printf("\n\x1b[2m\x1b[31m[USER-MODEL](TEST2|CREATE): Failed to create a new user :( \x1b[0m\n");
+  }
+
+endif; 
+// <- ========[ End of Test #2 ]===========
 
 
-endif; // <- ========[ End of Test #2 ]===========
+
+
+
+
+
+
+
+// ===================== TEST #3 ========================
+// ==============[ FIND A USER BY EMAIL ]================
+// ======================================================
+
+if ($hasTestArg && in_array($testArg, ['findByEmail', 'test3'])) :
+
+  // get the 2nd argument variable as `userEmail`
+  $userEmail = isset($argv[2]) ? $argv[2] : ''; // <- if it exists, use it, else use an empty string
+
+  // Initialize a `log` variable
+  $log = sprintf(<<<LOG
+  
+  ==== "[Email NOT Provided]" ====
+  email: ???
+  date_time: %s
+  ======================
+
+  LOG, date('Y-m-d H:i:s'));
+
+
+  // If the `userEmail` is not empty...
+  if (!empty($userEmail)) {
+    // ...find the user with that email as `user`
+    $user = $userModel->findByEmail($userEmail);
+
+    
+    // if a user was found with that email...
+    if ($user) { 
+    // ...TEST [4dbsmaster]: tell me about the user
+    printf("\n\x1b[2m\x1b[33m[USER-MODEL](TEST3|FINDBYEMAIL): Here's the user with email (\x1b[0m\x1b[4m\x1b[33m%s\x1b[0m\x1b[2m\x1b[33m):\x1b[0m\n", $userEmail);
+
+    // print the user
+    print_r($user);
+
+
+    // Update the `$log`
+    $log = sprintf(<<<LOG
+    
+    ==== "[User Found]" ====
+    email: %s
+    date_time: %s
+    ======================
+
+    LOG, $userEmail, date('Y-m-d H:i:s'));
+
+    } else { // <- no user found with that email
+
+      // DEBUG [4dbsmaster]: tell me about the error
+      printf("\n\x1b[2m\x1b[34m[USER-MODEL](TEST3|FINDBYEMAIL): \x1b[0m\x1b[34mNo user found with email (\x1b[0m\x1b[4m\x1b[34m%s\x1b[0m\x1b[2m\x1b[34m) :( \x1b[0m\n", $userEmail);
+
+      
+      // Update the `$log`
+      $log = sprintf(<<<LOG
+      
+      ==== "[User NOT Found]" ====
+      email: %s
+      date_time: %s
+      ======================
+
+      LOG, $userEmail, date('Y-m-d H:i:s'));
+
+    }
+
+
+  } else { // <- no email provided
+
+    // TEST [4dbsmaster]: tell me about the error
+    printf("\n\x1b[2m\x1b[31m[USER-MODEL](TEST3|FINDBYEMAIL): \x1b[0m\x1b[31mNo email provided :( \x1b[0m\n");
+
+  }
+
+
+  // save the `$log` in a `test3.log` file
+  file_put_contents('test3.log', $log, FILE_APPEND);
+
+endif; 
+// <- ========[ End of Test #3 ]===========

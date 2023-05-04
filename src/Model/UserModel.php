@@ -92,11 +92,15 @@ class UserModel extends Database {
    * @return array - an associative array of all the users in the database
    */
   public function findAll(): array {
-    // create an as sql query named `find_users_query`,
+    // create an sql query named `find_users_query`,
     // using a heredoc syntax - https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
-    $find_users_query = <<<SQL
-      SELECT * FROM users
-    SQL;
+    $find_users_query = sprintf(<<<SQL
+      SELECT * 
+      FROM %s
+    SQL,
+
+    $this::TABLE_USERS
+    );
 
     // prepare the `find_users_query` as a PDO statement
     $pdo_stmt = $this->pdo->prepare($find_users_query);
@@ -113,7 +117,128 @@ class UserModel extends Database {
 
 
 
+  /**
+   * Creates a new user with the given parameters
+   * NOTE: This method inserts a new user into the database
+   *
+   * @param string $email - the email of the user
+   * @param string $firstName - the first name of the user
+   * @param string $lastName - the last name of the user
+   * @param string $password - the password of the user
+   *
+   * @return array|false - Returns an array including the user's id of the newly created user, or false if the user was not created
+   */
+  public function create(string $email, string $firstName, string $lastName, string $password): array|false {
+    // Initialize the `result` boolean variable
+    $result = false;
 
+    // create an sql query named `create_user_query`,
+    $create_user_query = sprintf(<<<SQL
+      INSERT INTO %s 
+        (%s, %s, %s, %s)
+      VALUES 
+        (:email, :firstName, :lastName, :password)
+      SQL,
+
+      // table
+      self::TABLE_USERS,
+
+      // fields
+      self::FIELD_EMAIL,
+      self::FIELD_FIRST_NAME,
+      self::FIELD_LAST_NAME,
+      self::FIELD_PASSWORD
+    );
+
+    try { // <- try to create a new user
+
+      // prepare the `create_user_query` as a PDO statement
+      $pdo_stmt = $this->pdo->prepare($create_user_query);
+
+      // execute our PDO statement with the given parameters,
+      // and store the result in a variable named `$result`
+      $pdo_stmt->execute([
+        ':email' => $email,
+        ':firstName' => $firstName,
+        ':lastName' => $lastName,
+        ':password' => $password
+      ]);
+
+      // get the last inserted id as `userId`
+      $userId = $this->pdo->lastInsertId();
+
+      // update the `result` w/ a short-syntax associative array of the new user
+      $result = [
+        'id' => $userId,
+        'email' => $email,
+        'first_name' => $firstName,
+        'last_name' => $lastName,
+        'password' => $password
+      ];
+
+    } catch (PDOException $e) { // <- catch any PDOException errors
+
+      // log the error
+      error_log($e->getMessage());
+
+    }
+
+    // return the `result`
+    return $result;
+  }
+
+
+  /**
+   * Method used to find a user by their email
+   *
+   * @param string $email - the email of the user
+   *
+   * @return array|false - Returns an array containing the user's details, or FALSE if the user does not exist
+   */
+  public function findByEmail(string $email): array|false {
+    // Initialize the `result` boolean variable
+    $result = false;
+
+
+    // create a `find_user_by_email_query` sql query
+    $find_user_by_email_query = sprintf(<<<SQL
+      SELECT * 
+      FROM %s
+      WHERE %s = :email
+
+    SQL,
+
+    // table
+    self::TABLE_USERS,
+
+    // field
+    self::FIELD_EMAIL
+
+    );
+
+    try { // <- try to prepare and execute our query
+
+      // prepare the `find_user_by_email_query` as a PDO statement
+      $pdo_stmt = $this->pdo->prepare($find_user_by_email_query);
+
+      // execute our PDO statement with the given parameters
+      $pdo_stmt->execute([
+        ':email' => $email
+      ]);
+      
+      // fetch the results from `pdo_stmt` as an associative array
+      $result = $pdo_stmt->fetch(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) { // <- catch any PDOException errors
+
+      // log the error
+      error_log($e->getMessage());
+
+    }
+
+    // return the `result`
+    return $result;
+  }
 
 
 

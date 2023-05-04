@@ -99,6 +99,27 @@
   <code><?= APP_NAME ?> <span>Job 02.3</span></code>
   <h1>Register</h1>
 
+  <!-- Status Messages -->
+  <div class="status-messages">
+    <!-- Error - Status Message -->
+    <div class="error status-message" hidden>
+      <span class="material-icons icon">error_outline</span>
+      <p class="message">Error</p>
+    </div>
+
+    <!-- Success - Status Message -->
+    <div class="success status-message" hidden>
+      <span class="material-icons">thumb_up_alt</span>
+      <p class="message">Success</p>
+      <button contained hidden>Go to login page</button>
+    </div>
+
+  </div>
+  <!-- End of Status Messages -->
+
+
+
+
   <!-- Register Form -->
   <form id="registerForm">
 
@@ -183,17 +204,18 @@
         placeholder="Enter your password" 
         minlength="8"
         maxlength="60"
-        pattern="^(?=.*[A-Za-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+        pattern="^(?=.*[A-Za-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#_?&])[A-Za-z\d@$!%*#_?&]{8,}$"
       />
 
       <!-- Password Pattern Explanation:
       
-      1. (?=.*[A-Z]): Positive lookahead for at least one uppercase letter. <<<
+      1. (?=.*[@$!%*#_?&]): Positive lookahead for at least one special character. <<<
       2. (?=.*[A-Za-z]): Positive lookahead for at least one letter (uppercase or lowercase) <<<
       3. (?=.*\d): Positive lookahead for at least one digit <<<
-      4. [A-Za-z\d@$!%*#?&]: Any combination of uppercase and lowercase letters, 
-         digits, and the special characters @$!%*#?& <<<
-      5. {8,60}: At least 8 characters long; <<<
+      4. (?=.*[A-Z]): Positive lookahead for at least one uppercase letter. <<<
+      5. [A-Za-z\d@$!%*#_?&]: Any combination of uppercase and lowercase letters, digits, 
+         and the special characters @$!%*#?& <<<
+      6. {8,}: At least 8 characters long <<<
       -->
 
       <!-- Input Indicator -->
