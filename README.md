@@ -352,7 +352,7 @@ These are the following tasks of **Job 02.3** w/ their names and current status:
 
 ### Description of Job 02.4  
 
-Switch to your main or master branch and pull in your latest changes. Create a new feature/login branch and switch to it.
+Switch to your main or master branch and pull in your latest changes. Create a new **feature/login** branch and switch to it.
 
 Use the same principle for the connection with two **`/login`** routes, one with the verb *‘GET’* and one with the verb *‘POST’*.
 
@@ -369,8 +369,13 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`feature/login - Branch`* | *_In progress_* |
+| 2 | *`Login - (GET) Route`* | Pending |
+| 3 | *`Login - View`* | Pending |
+| 4 | *`AuthController`* | Pending |
+| 5 | *`Login - (POST) Route`* | Pending |
+| 6 | *`Final Commit & PR of 'feature/login' to 'main'`* | Pending |
+
 
 > NOTE: (\*) = still needs to be updated
 
