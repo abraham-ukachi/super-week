@@ -54,16 +54,20 @@ ini_set("display_errors", 1);
 require __DIR__ . '/vendor/autoload.php';
 
 
-// use the `UserController`
-use App\Controller\UserController;
-
-
-
-
-
-
 // instantiate the `AltoRouter` class with an object named `router`
 $router = new AltoRouter();
+
+
+
+// using controllerss
+use App\Controller\UserController; // <- use the `UserController`
+use App\Controller\AuthController; // <- use the `AuthController`
+
+
+
+
+
+
 
 
 // Define some constant variables
@@ -194,6 +198,30 @@ $router->map('GET', '/users/[i:userId]', function($userId) {
 
 
 
+
+/**
+ * Route that allows a user to get registered
+ *
+ * @example fetch('register', {method: 'POST', body: form})
+ *
+ * @method POST
+ * @route '/register'
+ *
+ */
+$router->map('POST', '/register', function() {
+  // Instantiate the `AuthController`
+  $authController = new AuthController();
+  
+  // Call the `register()` method
+  $authController->register();
+
+  // Get the response after the `register()` method is called
+  $response = $authController->getResponse();
+
+  // echo the `response` in a JSON format
+  echo json_encode($response);
+
+});
 
 
 
