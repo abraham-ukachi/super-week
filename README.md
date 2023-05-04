@@ -369,8 +369,8 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *`feature/login - Branch`* | *_In progress_* |
-| 2 | *`Login - (GET) Route`* | Pending |
+| 1 | *`feature/login - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/login) |
+| 2 | *`Login - (GET) Route`* | *_In progress_* |
 | 3 | *`Login - View`* | Pending |
 | 4 | *`AuthController`* | Pending |
 | 5 | *`Login - (POST) Route`* | Pending |
