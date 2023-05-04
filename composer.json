@@ -3,7 +3,8 @@
     "description": "A school project with ~10 tasks/jobs tabout php routing, composer, autoloader, pdo database including some js asynchronous functionalities, to be completed in ONE week ;)",
     "type": "project",
     "require": {
-        "altorouter/altorouter": "^2.0"
+        "altorouter/altorouter": "^2.0",
+        "fakerphp/faker": "^1.21"
     },
     "license": "MIT",
     "autoload": {
