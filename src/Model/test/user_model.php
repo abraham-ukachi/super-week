@@ -33,7 +33,7 @@
 
 /*
  * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- * MOTTO: We'll always do more 😜!!!
+ * MOTTO: I'll always do more 😜!!!
  * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  */
 
@@ -55,6 +55,8 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 
 // set the default timezone to 'Europe/Paris'
 date_default_timezone_set('Europe/Paris');
+// start the session
+session_start();
 
 
 // require the `UserModel.php` file
@@ -72,7 +74,7 @@ use Faker\Factory;
 
 // Create an object of the `UserModel` class as `userModel`
 $userModel = new UserModel();
-$faker = Factory::create(); // <- use the factory to create a Faker\Generator instance named `$faker`
+$faker = Factory::create('en_US'); // <- use the factory to create a Faker\Generator instance named `$faker`
 
 // DEBUG [4dbsmaster]: tell me about it ;)
 printf("\n\x1b[34m[UserModel - Test]: Welcome 👋🏽 !!!\x1b[0m\n");
@@ -252,3 +254,112 @@ if ($hasTestArg && in_array($testArg, ['findByEmail', 'test3'])) :
 
 endif; 
 // <- ========[ End of Test #3 ]===========
+
+
+
+
+// ======================= TEST #4 ========================
+// =============[ CONNECT A REGISTERED USER ]==============
+// ========================================================
+
+if ($hasTestArg && in_array($testArg, ['connect', 'test4'])) :
+
+  // get the 2nd argument variable as `userEmail`
+  $userEmail = isset($argv[2]) ? $argv[2] : ''; // <- if it exists, use it, else use an empty string
+
+  // get the 3rd argument variable as `userPassword`
+  $userPassword = isset($argv[3]) ? $argv[3] : ''; // <- if it exists, use it, else use an empty string
+
+
+
+  // Initialize a `log` variable
+  $log = sprintf(<<<LOG
+  
+  ==== "[User NOT Connected ❌]" ====
+  email: %s
+  password: %s
+  date_time: %s
+  ======================
+
+  LOG, 
+  $userEmail, $userPassword,
+  date('Y-m-d H:i:s'));
+
+
+  // If the email and password are not empty...
+  if (!empty(trim($userEmail)) && !empty(trim($userPassword))) {
+    // ...try to connect the user
+    try {
+      // connect the user
+      $user = $userModel->connect($userEmail, $userPassword);
+      
+      // user is connected if `user` is not FALSE
+      $userIsConnected = $user !== false;
+
+      // If the user is connected...
+      if ($userIsConnected) {
+        // ...TEST [4dbsmaster]: tell me about the user
+        printf("\n\x1b[2m\x1b[33m[USER-MODEL](TEST4|CONNECT): \x1b[0m\x1b[33mUser with email (\x1b[0m\x1b[4m\x1b[33m%s\x1b[0m\x1b[2m\x1b[33m) is connected :) \x1b[0m\n", $userEmail);
+
+        // print the user
+        print_r($user);
+
+        // update the `$log` 
+        $log = sprintf(<<<LOG
+
+        ==== "[User Connected ✅]" ====
+        id: %d
+        email: %s
+        password: %s
+        date_time: %s
+        ======================
+
+        LOG,
+        $user['id'], $user['email'], $user['password'],
+        date('Y-m-d H:i:s'));
+          
+      }else { // <- user is not connected
+
+        // update the `$log` 
+        $log = sprintf(<<<LOG
+
+        ==== "[Connected Failed 😢]" ====
+        email: %s
+        password: %s
+        date_time: %s
+        ======================
+
+        LOG,
+        $userEmail, $userPassword,
+        date('Y-m-d H:i:s'));
+
+
+        // DEBUG [4dbsmaster]: tell me about the error
+        printf("\n\x1b[2m\x1b[31m[USER-MODEL](TEST4|CONNECT): \x1b[0m\x1b[31mFailed to connect the user with email (\x1b[0m\x1b[4m\x1b[31m%s\x1b[0m\x1b[2m\x1b[31m) :( Try again ! \x1b[0m\n", $userEmail);
+      }
+
+    } catch (Exception $e) {
+      // DEBUG [4dbsmaster]: tell me about the error
+      printf("\n\x1b[2m\x1b[31m[USER-MODEL](TEST4|CONNECT): \x1b[0m\x1b[31m%s \x1b[0m\n", $e->getMessage());
+    }
+
+
+    // log the result in a `test4.log` file
+    file_put_contents('test4.log', $log, FILE_APPEND);
+
+  } else { // <- email or password is empty
+
+    // DEBUG [4dbsmaster]: tell me about the error
+    printf("\n\x1b[2m\x1b[31m[USER-MODEL](TEST4|CONNECT): \x1b[0m\x1b[31mEmail or password is empty :( \x1b[0m\n");
+  }
+
+
+endif; 
+// <- ========[ End of Test #4 ]===========
+
+
+
+
+
+
+
