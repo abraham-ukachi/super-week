@@ -244,6 +244,32 @@ $router->map('POST', '/register', function() {
 });
 
 
+/**
+ * Route that allows a user to login 
+ *
+ * @example fetch('login', {method: 'POST', body: form})
+ *
+ * @method POST
+ * @route '/login'
+ *
+ */
+$router->map('POST', '/login', function() {
+  // Instantiate the `AuthController`
+  $authController = new AuthController();
+  
+  // Call the `login()` method
+  $authController->login();
+
+  // Get the response after the `login()` method is called
+  $response = $authController->getResponse();
+
+  // echo the `response` in a JSON format
+  echo json_encode($response);
+
+});
+
+
+
 
 
 
