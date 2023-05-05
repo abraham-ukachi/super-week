@@ -161,6 +161,26 @@ $router->map('GET', '/register', function() {
 
 
 
+/**
+ * Route that displays a login form,
+ * and allows a user to get logged in
+ *
+ * @example http://localhost/super-week/login
+ *
+ * @method GET
+ * @route '/login'
+ */
+$router->map('GET', '/login', function() {
+
+  // TODO: ? Create & Instantiate a LoginController
+  
+  // display the login page from the `View/` folder
+  require __DIR__ . '/src/View/login.php';
+});
+
+
+
+
 
 /**
  * Route that displays a specific user's page
