@@ -176,6 +176,15 @@
   </form>
   <!-- End of Login Form -->
 
+  <!-- Go To Buttons -->
+  <div class="goto-buttons">
+    <!-- Go To Home - Button --> 
+    <button class="goto-home" contained hidden>Go To Home Page</button>
+
+    <!-- Go To Login - Button --> 
+    <button class="goto-login" contained hidden>Go To Login Page</button>
+  </div>
+
 </body>
 
 </html>
