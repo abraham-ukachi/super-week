@@ -31,9 +31,9 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | 3 | [*`Job 01.5`*](#Job-015) | [Done](./database.sql) |
 | 4 | [*`Job 02.1`*](#Job-021) | [Done](./composer.json) |
 | 5 | [*`Job 02.2`*](#Job-022) | [Done](./src/Controller/UserController.php) |
-| 6 | [*`Job 02.3`*](#Job-023) | [Done](./src/Controller/AuthController.php) |
-| 7 | [*`Job 02.4`*](#Job-024) | *_In progress_* |
-| 8 | [*`Job 03`*](#Job-03) | Pending |
+| 6 | [*`Job 02.3`*](#Job-023) | [Done](./src/Controller/AuthController.php)\* |
+| 7 | [*`Job 02.4`*](#Job-024) | [Done](./src/Controller/AuthController.php)\* |
+| 8 | [*`Job 03`*](#Job-03) | *_In progress_* |
 | 9 | [*`Job 04`*](#Job-04) | Pending |
 | 10 | [*`Job +`*](#Job-) | Pending |
 
@@ -374,7 +374,7 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 | 3 | *`Login - View`* | [Done](./src/View/login.php) |
 | 4 | *`AuthController`* | [Done](./src/Controller/AuthController.php)\* |
 | 5 | *`Login - (POST) Route`* | [Done](./index.php) |
-| 6 | *`Final Commit & PR of 'feature/login' to 'main'`* | *_In progress_* |
+| 6 | *`Final Commit & PR of 'feature/login' to 'main'`* | [Done](https://github.com/abraham-ukachi/super-week/pull/9) |
 
 
 > NOTE: (\*) = still needs to be updated
