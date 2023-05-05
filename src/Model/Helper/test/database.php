@@ -297,7 +297,7 @@ if ($hasTestArg && $testArg === 'test4') :
     // generate some fake data
     $title = $faker->sentence($nbTitleWords);
     $content = $faker->sentence($nbContentWords);
-    $id_user = rand(2, 100); // <- faking the user's id w/ a random number between 2 and 100
+    $id_user = rand(2, $rowsToPopulate); // <- faking the user's id w/ a random number between 2 and given `rowsToPopulate` value
 
     // create a `create_book_query` sql query
     $create_book_query = sprintf(<<<SQL
