@@ -32,10 +32,10 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | 4 | [*`Job 02.1`*](#Job-021) | [Done](./composer.json) |
 | 5 | [*`Job 02.2`*](#Job-022) | [Done](./src/Controller/UserController.php) |
 | 6 | [*`Job 02.3`*](#Job-023) | [Done](./src/Controller/AuthController.php) |
-| 6 | [*`Job 02.4`*](#Job-024) | *_In progress_* |
-| 7 | [*`Job 03`*](#Job-03) | Pending |
-| 8 | [*`Job 04`*](#Job-04) | Pending |
-| 9 | [*`Job +`*](#Job-) | Pending |
+| 7 | [*`Job 02.4`*](#Job-024) | *_In progress_* |
+| 8 | [*`Job 03`*](#Job-03) | Pending |
+| 9 | [*`Job 04`*](#Job-04) | Pending |
+| 10 | [*`Job +`*](#Job-) | Pending |
 
 
 > NOTE: (\*) = still needs to be updated \
@@ -370,9 +370,9 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`feature/login - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/login) |
-| 2 | *`Login - (GET) Route`* | *_In progress_* |
-| 3 | *`Login - View`* | Pending |
-| 4 | *`AuthController`* | Pending |
+| 2 | *`Login - (GET) Route`* | [Done](./index.php) |
+| 3 | *`Login - View`* | [Done](./src/View/login.php) |
+| 4 | *`AuthController`* | *_In progress_* |
 | 5 | *`Login - (POST) Route`* | Pending |
 | 6 | *`Final Commit & PR of 'feature/login' to 'main'`* | Pending |
 
