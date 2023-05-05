@@ -372,7 +372,7 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 | 1 | *`feature/login - Branch`* | [Done](https://github.com/abraham-ukachi/super-week/tree/feature/login) |
 | 2 | *`Login - (GET) Route`* | [Done](./index.php) |
 | 3 | *`Login - View`* | [Done](./src/View/login.php) |
-| 4 | *`AuthController`* | *_In progress_* |
+| 4 | *`AuthController`* | [Done](./src/Controller/AuthController.php)\* |
 | 5 | *`Login - (POST) Route`* | Pending |
 | 6 | *`Final Commit & PR of 'feature/login' to 'main'`* | Pending |
 
@@ -385,7 +385,8 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 
 | No. | GUI | CLI |
 |:----|:----|:----|
-| 1 | - | - |
+| 1 | ![Login - GUI - Screenshot](./.github/screenshots/job02.4_login_gui.png) | ![Login - CLI - Screenshot](./.github/screenshots/job02.4_login_cli.png) |
+| 2 | - | - |
 
 
 </details>
