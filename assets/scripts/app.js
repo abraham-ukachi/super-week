@@ -37,9 +37,11 @@
 
 
 // Select some elments from the DOM
-const createAccountButtonEl = document.getElementById("createAccountButton"); // <- create account button element
 const registerFormEl = document.getElementById("registerForm"); // <- register form element
+const loginFormEl = document.getElementById("loginForm"); // <- login form element
 const formInputEls = document.querySelectorAll("form input");
+const gotoLoginBtnEl = document.querySelector("button.goto-login");
+const gotoHomeBtnEl = document.querySelector("button.goto-home");
 
 
 
@@ -120,23 +122,11 @@ let hideSuccess = (el) => {
 // Defining some event handlers ...
 
 
-/**
- * Handler that is called whenever the create account button is clicked
- *
- * @param { ClickEvent } event - The click event object
- */
-let handleCreateAccountButtonClick = function (event) {
-
-  // DEBUG [4dbsmaster]: tell me about it ;)
-  console.log(`\x1b[33m[handleCreateAccountButtonClick]: event => \x1b[0m`, event);
-};
-
-
 
 /**
  * Handler that is called whenever the `<form id="registerForm">` is submitted
  *
- * @param { ClickEvent } event - The click event object
+ * @param { SubmitEvent } event - The submit event object
  */
 let handleRegisterFormSubmit = async (event) => {
   // Prevent the default form submission behavior
@@ -192,7 +182,77 @@ let handleRegisterFormSubmit = async (event) => {
     formEl.reset();
 
     // hide the form element
-    //formEl.hidden = true;
+    formEl.hidden = true;
+
+    // show the goto login button
+    gotoLoginBtnEl.hidden = false;
+
+  }else { // <- failed to register user...
+    // hide any success
+    hideSuccess();
+    // ...show an error message
+    showError(responseData.message);
+  }
+
+  
+   
+
+  // DEBUG [4dbsmaster]: tell me about it ;)
+  console.log(`\x1b[33m[handleRegisterFormSubmit]: formEl => \x1b[0m`, formEl);
+};
+
+
+
+
+
+/**
+ * Handler that is called whenever the `<form id="loginForm">` is submitted
+ *
+ * @param { SubmitEvent } event - The submit event object
+ */
+let handleLoginFormSubmit = async (event) => {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+  
+  // get the form element as `formEl`
+  const formEl = event.currentTarget;
+
+  // create a form data with `formEl` as `formData`
+  const formData = new FormData(formEl);
+
+
+  // TODO: Validate each form field before submitting the form
+  
+
+  // Define our url
+  let url = 'login';
+
+  // Create a new request object
+  let request = new Request(url, {method: 'POST', body: formData});
+
+  // Send the request and 'await' a response #LOL ;)
+  let response = await fetch(request);
+  let responseData = await response.json(); // <- get the JSON representation of the `response` as `responseData`
+   
+  // DEBUG [4dbsmaster]: tell me about it ;)
+  console.log(responseData);
+  
+  // If the request was a success (i.e. user was connected successfully)...
+  if (responseData.success) {
+    // hide any error
+    hideError();
+
+    // ...show a success message
+    showSuccess(responseData.message);
+
+    // reset the form element
+    formEl.reset();
+
+    // hide the form element
+    formEl.hidden = true;
+
+    // show the go to home button
+    gotoHomeBtnEl.hidden = false;
 
   }else { // <- failed to register user...
     // hide any success
@@ -216,26 +276,33 @@ let handleRegisterFormSubmit = async (event) => {
 
 
 
-
-
-
-
-
-
-
-
 // Attaching event listeners to elements in the DOM...
 
-// If there's a `createAccountButtonEl` element... 
-if (createAccountButtonEl) {
-  // ...add a click event listener to it
-  createAccountButtonEl.addEventListener("click", handleCreateAccountButtonClick);
-}
 
 // If there's a `registerFormEl` element...
 if (registerFormEl) {
   // ...add a submit event listener to it
   registerFormEl.addEventListener("submit", handleRegisterFormSubmit);
+}
+
+// If there's a `loginFormEl` element...
+if (loginFormEl) {
+  // ...add a submit event listener to it
+  loginFormEl.addEventListener("submit", handleLoginFormSubmit);
+}
+
+
+// If there's a `gotoLoginBtnEl` element...
+if (gotoLoginBtnEl) {
+  // ...add a click event listener to it that redirects to the login page
+  gotoLoginBtnEl.addEventListener("click", () => location.href = 'login');
+}
+
+
+// If there's a `gotoHomeBtnEl` element...
+if (gotoHomeBtnEl) {
+  // ...add a click event listener to it that redirects to the home page
+  gotoHomeBtnEl.addEventListener("click", () => location.href = '');
 }
 
 
@@ -247,6 +314,5 @@ for (let formInputEl of formInputEls) {
     // hide both success and/or errors
     hideSuccess();
     hideError();
-      
   });
 }
