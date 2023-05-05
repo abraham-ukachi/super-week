@@ -168,8 +168,51 @@ class AuthController {
 
   } 
    
+ 
+  /**
+   * Method used to login a registered user
+   *
+   * @return bool : Returns TRUE if the user was logged in successfully, FALSE otherwise
+   */
+  public function login(): bool {
+    // Instantiate the `User` model as `$userModel`
+    $userModel = new UserModel();
 
-  
+    // Get the request body as `$requestBody`
+    $requestBody = $this->getRequestBody(true); // <- from POST
+
+    // Get the email and password,
+    $email = $requestBody['email'];
+    $password = $requestBody['password'];
+    
+
+    // Connecting the user...
+
+    // Connect the user with the `$email` and `$password` and assign the result to `$user`
+    $user = $userModel->connect($email, $password);
+    $userIsConnected = is_array($user); // <- The user is connected if `$user` is an array #codeReadability ;)
+
+
+    // If the user was successfully connected...
+    if ($userIsConnected) {
+      // ...update the response with the user's details (especially his/her `id`)
+      $this->updateResponse(true, self::$STATUS_SUCCESS_OK, 'User logged in successfully', $user);
+      
+      // return TRUE
+      return true;
+
+    } else { // <- user was not connected
+      // ...update the response accordingly
+      $this->updateResponse(false, self::$STATUS_ERROR_UNAUTHORIZED, 'Wrong email or password');
+      
+      // return FALSE
+      return false;
+    }
+
+  } 
+   
+
+
   
   // PRIVATE SETTERS
 

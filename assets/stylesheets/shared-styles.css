@@ -441,3 +441,31 @@ p.input-message {
 
 
 /* === END OF STATUS MESSAGES === */
+
+button[type="submit"] {
+  margin-top: 2rem;
+}
+
+
+
+/* ===>>> GO TO BUTTONS <<<=== */
+
+.goto-buttons {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.goto-buttons > * {
+  margin: 2rem 0;
+}
+
+button.goto-home {}
+
+button.goto-login {}
+
+button.goto-register {}
+
+/* === END OF GO TO BUTTONS === */

@@ -161,6 +161,26 @@ $router->map('GET', '/register', function() {
 
 
 
+/**
+ * Route that displays a login form,
+ * and allows a user to get logged in
+ *
+ * @example http://localhost/super-week/login
+ *
+ * @method GET
+ * @route '/login'
+ */
+$router->map('GET', '/login', function() {
+
+  // TODO: ? Create & Instantiate a LoginController
+  
+  // display the login page from the `View/` folder
+  require __DIR__ . '/src/View/login.php';
+});
+
+
+
+
 
 /**
  * Route that displays a specific user's page
@@ -222,6 +242,32 @@ $router->map('POST', '/register', function() {
   echo json_encode($response);
 
 });
+
+
+/**
+ * Route that allows a user to login 
+ *
+ * @example fetch('login', {method: 'POST', body: form})
+ *
+ * @method POST
+ * @route '/login'
+ *
+ */
+$router->map('POST', '/login', function() {
+  // Instantiate the `AuthController`
+  $authController = new AuthController();
+  
+  // Call the `login()` method
+  $authController->login();
+
+  // Get the response after the `login()` method is called
+  $response = $authController->getResponse();
+
+  // echo the `response` in a JSON format
+  echo json_encode($response);
+
+});
+
 
 
 

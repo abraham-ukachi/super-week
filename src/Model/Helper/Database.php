@@ -108,6 +108,7 @@ class Database {
   public const FIELD_FIRST_NAME = 'first_name';
   public const FIELD_LAST_NAME = 'last_name';
   public const FIELD_PASSWORD = 'password';
+  public const FIELD_TOKEN = 'token';
   public const FIELD_TITLE = 'title';
   public const FIELD_CONTENT = 'content';
   public const FIELD_ID_USER = 'id_user';
@@ -427,6 +428,7 @@ class Database {
       " . self::FIELD_FIRST_NAME . " VARCHAR(255) NOT NULL,
       " . self::FIELD_LAST_NAME . " VARCHAR(255) NOT NULL,
       " . self::FIELD_PASSWORD . " VARCHAR(255) NOT NULL,
+      " . self::FIELD_TOKEN . " VARCHAR(255) DEFAULT NULL,
       PRIMARY KEY (" . self::FIELD_ID . "),
       UNIQUE KEY `users_email_unique` (" . self::FIELD_EMAIL . ") 
     ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci"; // <- TODO:? Specify an Engine like `innoDB`
