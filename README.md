@@ -373,7 +373,7 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 | 2 | *`Login - (GET) Route`* | [Done](./index.php) |
 | 3 | *`Login - View`* | [Done](./src/View/login.php) |
 | 4 | *`AuthController`* | [Done](./src/Controller/AuthController.php)\* |
-| 5 | *`Login - (POST) Route`* | Pending |
+| 5 | *`Login - (POST) Route`* | [Done](./index.php) |
 | 6 | *`Final Commit & PR of 'feature/login' to 'main'`* | Pending |
 
 
@@ -386,7 +386,8 @@ These are the following tasks of **Job 02.4** w/ their names and current status:
 | No. | GUI | CLI |
 |:----|:----|:----|
 | 1 | ![Login - GUI - Screenshot](./.github/screenshots/job02.4_login_gui.png) | ![Login - CLI - Screenshot](./.github/screenshots/job02.4_login_cli.png) |
-| 2 | - | - |
+| 2 | ![Login - Success - GUI - Screenshot](./.github/screenshots/job02.4_login_success_gui.png) | ![Login - CLI - Screenshot](./.github/gifs/job02.4_login_cli.gif) |
+| 3 | - | - |
 
 
 </details>
