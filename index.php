@@ -49,6 +49,9 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 // ---===---===---===---===---===---===---===---
 
+// start the session
+session_start();
+
 
 // require the autoloader
 require __DIR__ . '/vendor/autoload.php';
@@ -62,7 +65,7 @@ $router = new AltoRouter();
 // using controllerss
 use App\Controller\UserController; // <- use the `UserController`
 use App\Controller\AuthController; // <- use the `AuthController`
-
+use App\Controller\RegisterController; // <- use the `RegisterController`
 
 
 
@@ -101,7 +104,13 @@ $router->setBasePath(BASE_DIR);
  * @route '/'
  *
  */
-$router->map('GET', '/', function() {
+$router->map('GET', '/[home:page]?', function(?string $page = null) {
+  if ($page === 'home') {
+    // redirect to the home page
+      header('Location: ' . BASE_DIR);
+      exit();
+  }
+
   // Create a welcome message as per project requirement  
   $welcomeMessage = 'Welcome to the home page';
   
@@ -152,11 +161,13 @@ $router->map('GET', '/users', function() {
  * @route '/register'
  */
 $router->map('GET', '/register', function() {
-
-  // TODO: ? Create & Instantiate a RegisterController
   
-  // display the register page from the `View/` folder
-  require __DIR__ . '/src/View/register.php';
+  // Instantiate the `RegisterController`
+  $registerController = new RegisterController();
+
+  // show the register page
+  $registerController->showPage();
+
 });
 
 
@@ -177,6 +188,7 @@ $router->map('GET', '/login', function() {
   // display the login page from the `View/` folder
   require __DIR__ . '/src/View/login.php';
 });
+
 
 
 

@@ -98,7 +98,7 @@ class UserModel extends Database {
       // If the user exists...
       if ($user) {
         // ...populate the `UserModel`'s properties
-        $this->populate($user);
+        $this->populateProps($user);
       } else {
         // ...else, disconnect the user 'cause duh! Somethin' doesn't seam right #LOL
         $this->disconnect();
@@ -453,6 +453,9 @@ class UserModel extends Database {
 
     // get the session token as `sessionToken`
     $sessionToken = $this->getSessionToken();
+    
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    //printf('<pre>sessionToken: %s</pre>', $sessionToken);
 
     // if there's a session token and if this `sessionToken` is verified...
     if (!empty($sessionToken) && $this->verifyToken($sessionToken)) {
@@ -845,7 +848,7 @@ class UserModel extends Database {
     $verify_token_query = sprintf(<<<SQL
       SELECT %s 
       FROM %s
-      WHERE %s = :token,
+      WHERE %s = :token
       
       SQL,
 
