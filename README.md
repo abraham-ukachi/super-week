@@ -561,7 +561,7 @@ open http://localhost/super-week
 
 | Browser | Version | Status | Date | Time
 |:--------|:--------|:-------|:-----|:-----
-| *`Arc`* | **0.98.2** | [Tested](http://localhost/super-week) | 03/05/2023 | 11:28 AM
+| *`Arc`* | **0.98.2** | [Tested](http://localhost/super-week) | 06/05/2023 | 05:06 PM
 | *`Brave`* | **-** | *Pending* | - | -
 | *`Chrome`* | **-** | *Pending* | - | -
 | *`Firefox`* | **-** | *Pending* | - | - 
@@ -583,7 +583,7 @@ These are some of the things I did in addition to this project's [job requiremen
 | 1 | *`Database - Test`* | **database.php** | [Done](./src/Model/Helper/test/database.php)\* |
 | 2 | *`User Model - Test`* | **user_model.php** | [Done](./src/Model/test/user_model.php)\* |
 | 3 | *`Register - Controller`* | **RegisterController.php** | [Done](./src/Controller/RegisterController)\* | 
-| 4 | *`Login - Controller`* | **LoginController.php** | *_In progress_* | 
+| 4 | *`Login - Controller`* | **LoginController.php** | [Done](./src/Controller/LoginController)\* | 
 | 5 | *`??`* | **??** | ?? | 
 
 
