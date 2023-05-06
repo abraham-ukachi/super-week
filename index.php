@@ -66,7 +66,7 @@ $router = new AltoRouter();
 use App\Controller\UserController; // <- use the `UserController`
 use App\Controller\AuthController; // <- use the `AuthController`
 use App\Controller\RegisterController; // <- use the `RegisterController`
-
+use App\Controller\LoginController; // <- use the `LoginController`
 
 
 
@@ -183,10 +183,12 @@ $router->map('GET', '/register', function() {
  */
 $router->map('GET', '/login', function() {
 
-  // TODO: ? Create & Instantiate a LoginController
-  
-  // display the login page from the `View/` folder
-  require __DIR__ . '/src/View/login.php';
+  // Instantiate the `LoginController`
+  $loginController = new LoginController();
+
+  // show the login page
+  $loginController->showPage();
+
 });
 
 
