@@ -259,6 +259,8 @@ button[contained], a[role="button"][contained] {
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+  max-width: 400px;
+  margin: 1rem 0;
   -webkit-tap-highlight-color: transparent;
   
   -webkit-transform: scale(1);
@@ -300,6 +302,7 @@ button[contained]:focus-visible, a[role="button"][contained]:focus-visible {
   background: var(--button-color-focus, var(--tertiary-color));
   color: var(--button-color-focus, var(--on-tertiary-color));
 }
+
 
 /* Iput Indicator */
 .input-indicator {
