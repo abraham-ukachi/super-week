@@ -584,7 +584,8 @@ These are some of the things I did in addition to this project's [job requiremen
 | 2 | *`User Model - Test`* | **user_model.php** | [Done](./src/Model/test/user_model.php)\* |
 | 3 | *`Register - Controller`* | **RegisterController.php** | [Done](./src/Controller/RegisterController)\* | 
 | 4 | *`Login - Controller`* | **LoginController.php** | [Done](./src/Controller/LoginController)\* | 
-| 5 | *`??`* | **??** | ?? | 
+| 5 | *`Home - Controller`* | **HomeController.php** | *_In progress_* | 
+| 6 | *`??`* | **??** | ?? | 
 
 
 > NOTE: (\*) = still needs to be updated. <br>
