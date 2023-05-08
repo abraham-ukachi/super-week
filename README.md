@@ -420,8 +420,12 @@ These are the following tasks of **Job 03** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`GET - User - Route`* | Pending
+| 2 | *`GET - Write Book - Route`* | Pending
+| 3 | *`POST - Write Book - Route`* | Pending
+| 4 | *`GET - Books - Route`* | Pending
+| 5 | *`GET - Book - Route`* | Pending
+| 6 | *`GET - Logout - Route`* | *_In progress_*
 
 > NOTE: (\*) = still needs to be updated
 
