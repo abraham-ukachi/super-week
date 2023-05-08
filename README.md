@@ -420,23 +420,28 @@ These are the following tasks of **Job 03** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *`GET - User - Route`* | Pending
-| 2 | *`GET - Write Book - Route`* | Pending
-| 3 | *`POST - Write Book - Route`* | Pending
-| 4 | *`GET - Books - Route`* | Pending
-| 5 | *`GET - Book - Route`* | Pending
-| 6 | *`GET - Logout - Route`* | *_In progress_*
+| 1 | *`GET - User - Route`* | Pending |
+| 2 | *`GET - Write Book - Route`* | Pending |
+| 3 | *`POST - Write Book - Route`* | Pending |
+| 4 | *`GET - Books - Route`* | Pending |
+| 5 | *`GET - Book - Route`* | Pending |
+| 6 | *`GET - Logout - Route`* | [Done](./src/Controller/LogoutController.php)\* |
 
 > NOTE: (\*) = still needs to be updated
 
+### Branches for Job 03
 
+These are the branches that were created for the Job 03:
+
+- [feature/logout]()
+- ?
 
 ### Random Screenshots for Job 03  
 
 | No. | GUI | CLI |
 |:----|:----|:----|
-| 1 | - | - |
-
+| 1 | ![Logout - GUI - Screenshot](./.github/screenshots/job03_logout_gui.png) | ![Logout - CLI - Screenshot](./.github/screenshots/job03_logout_cli.png) |
+| 2 | N/A | N/A |
 
 </details>
 
@@ -589,7 +594,8 @@ These are some of the things I did in addition to this project's [job requiremen
 | 3 | *`Register - Controller`* | **RegisterController.php** | [Done](./src/Controller/RegisterController)\* | 
 | 4 | *`Login - Controller`* | **LoginController.php** | [Done](./src/Controller/LoginController)\* | 
 | 5 | *`Home - Controller`* | **HomeController.php** | [Done](./src/Controller/HomeController)\* | 
-| 6 | *`??`* | **??** | ?? | 
+| 6 | *`Logout - Controller`* | **LogoutController.php** | [Done](./src/Controller/LogoutController)\* | 
+| 7 | *`??`* | **??** | ?? | 
 
 
 > NOTE: (\*) = still needs to be updated. <br>
