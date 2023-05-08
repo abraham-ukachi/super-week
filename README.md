@@ -421,7 +421,7 @@ These are the following tasks of **Job 03** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`GET - Specific User - Route`* | [Done](./src/Controller/UserController.php)\* |
-| 2 | *`GET - Write Book - Route`* | Pending |
+| 2 | *`GET - Write Book - Route`* | *In progress_* |
 | 3 | *`POST - Write Book - Route`* | Pending |
 | 4 | *`GET - Books - Route`* | Pending |
 | 5 | *`GET - Specific Book - Route`* | Pending |
@@ -435,6 +435,7 @@ These are the branches that were created for the Job 03:
 
 - [feature/logout](https://github.com/abraham-ukachi/tree/feature/logout)
 - [feature/user](https://github.com/abraham-ukachi/tree/feature/user)
+- [books](https://github.com/abraham-ukachi/tree/books)
 - ?
 
 ### Random Screenshots for Job 03  
