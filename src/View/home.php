@@ -96,7 +96,53 @@
   
 <body>
   <code><?= APP_NAME ?> <span>Job 01</span></code>
-  <h1><?= $welcomeMessage ?></h1>
+  <h1><?= $this->welcomeMessage ?></h1>
+
+  <!-- PHP (1): If the user is connected ... -->
+  <?php if ($this->isUserConnected) : ?>
+
+  <main>
+    <!-- Log out - Button -->
+    <a href="logout">
+      <button id="logoutButton"contained>Log out <?= $this->userModel->getFullname() ?></button>
+    </a>
+  </main>
+
+  <?php else: ?><!-- (Else | PHP (1)) -->
+  
+  <main>
+    
+    <nav>
+      <!-- Users -->
+      <a href="users">
+        <button contained>Users</button>
+      </a>
+
+      <!-- Users / 420 -->
+      <a href="users/420">
+        <button contained>Users/420</button>
+      </a>      
+
+      <!-- Books -->
+      <a href="books">
+        <button contained>Books</button>
+      </a>
+
+      <!-- Login -->
+      <a href="login">
+        <button contained>Login</button>
+      </a>
+
+      <!-- Register -->
+      <a href="register">
+        <button contained>Register</button>
+      </a>
+
+    </nav>
+  </main>
+
+  <?php endif; ?>
+  <!-- End of PHP (1) -->
 </body>
 
 </html>
