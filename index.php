@@ -147,8 +147,8 @@ $router->map('GET', '/users', function() {
   // get a list of all users as `usersList`
   $usersList = $userController->list();
 
-  // echo the `usersList` in a paragraph tag
-  echo "<p>" . $usersList . "</p>";
+  // echo the `usersList` in a `pre` tag
+  echo "<pre>" . $usersList . "</pre>";
 });
 
 
@@ -233,11 +233,12 @@ $router->map('GET', '/logout', function() {
  *
  */
 $router->map('GET', '/users/[i:userId]', function($userId) {
-  // Create a welcome message as per project requirement  
-  $welcomeMessage = "Welcome to the page of User $userId";
-  
-  // Require the users page from 'View/'
-  require __DIR__ . '/src/View/user.php';
+  // Instantiate the `UserController`
+  $userController = new UserController();
+
+  // show the specific user's page 
+  $userController->showPage($userId);
+
 });
 
 
