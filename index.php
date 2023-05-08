@@ -62,7 +62,8 @@ $router = new AltoRouter();
 
 
 
-// using controllerss
+// using controllers
+use App\Controller\HomeController; // <- use the `HomeController`
 use App\Controller\UserController; // <- use the `UserController`
 use App\Controller\AuthController; // <- use the `AuthController`
 use App\Controller\RegisterController; // <- use the `RegisterController`
@@ -111,11 +112,12 @@ $router->map('GET', '/[home:page]?', function(?string $page = null) {
       exit();
   }
 
-  // Create a welcome message as per project requirement  
-  $welcomeMessage = 'Welcome to the home page';
-  
-  // Require the home page from 'View/'
-  require __DIR__ . '/src/View/home.php';
+  // Instantiate the `HomeController`
+  $homeController = new HomeController();
+
+  // Call the `showPage()` method
+  $homeController->showPage();
+
 });
 
 
