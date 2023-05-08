@@ -68,6 +68,7 @@ use App\Controller\UserController; // <- use the `UserController`
 use App\Controller\AuthController; // <- use the `AuthController`
 use App\Controller\RegisterController; // <- use the `RegisterController`
 use App\Controller\LoginController; // <- use the `LoginController`
+use App\Controller\LogoutController; // <- use the `LogoutController`
 
 
 
@@ -190,6 +191,30 @@ $router->map('GET', '/login', function() {
 
   // show the login page
   $loginController->showPage();
+
+});
+
+
+
+/**
+ * Route that displays the logout page,
+ * and logs a user out
+ *
+ * @example http://localhost/super-week/logout
+ *
+ * @method GET
+ * @route '/logout'
+ */
+$router->map('GET', '/logout', function() {
+
+  // Instantiate the `LogoutController`
+  $logoutController = new LogoutController();
+
+  // show the logout page
+  $logoutController->showPage();
+
+  // log the user out
+  $logoutController->logoutUser();
 
 });
 
