@@ -59,7 +59,7 @@ class UserController {
 
   
   // private properties
-  // private UserModel $userModel;
+  private UserModel $userModel;
 
 
   /**
@@ -70,7 +70,7 @@ class UserController {
     // TODO: write something awesome code here ;)
     
     // instantiate some models 
-    // $this->userModel = new User();
+    $this->userModel = new UserModel();
      
   }
 
@@ -80,10 +80,27 @@ class UserController {
 
   // PUBLIC GETTERS
 
+
+  /**
+   * Method used to get a user with the specified `userId`
+   *
+   * @param int $userId - The id of the user to get
+   *
+   * @return string - JSON representation of the user
+   */
+  public function get($userId): string {
+    // Get the user with the specified id
+    $user = $this->userModel->findById($userId);
+
+    // return the JSON representation of the `$user` array
+    return json_encode($user);
+  }
+
+
   // PUBLIC METHODS
 
   /**
-   * Method used to list all users
+   * Method used get a list all users
    *
    * @return string - JSON representation of all users
    */
@@ -95,10 +112,31 @@ class UserController {
     $users = $userModel->findAll();
 
     // return the JSON representation of the `$users` array
-    return json_encode($users);
+    return json_encode($users, JSON_PRETTY_PRINT);
   } 
-   
 
+
+  /**
+   * Method used to get a user with the specified `userId`
+   *
+   * @param int $userId - The id of the user to get
+   * @return void
+   */
+  public function showPage(?int $userId = null): void {
+    // Get the user details of the specified id as `$user`,
+    // using our beloved ternary statement
+    $user = (isset($userId)) ? $this->userModel->findById($userId) : '';
+
+    // Now, check if the user was found,
+    // NOTE: The user is found if `$user` is not empty or false
+    $userFound = (!empty($user) || $user !== false);
+
+    // encode the `$user` into JSON as `$userJSON`
+    $userJSON = json_encode($user, JSON_PRETTY_PRINT);
+
+    // embed or require the `user.php` view file
+    require  __DIR__ . '/../View/user.php';
+  } 
   
   
   // PRIVATE SETTERS

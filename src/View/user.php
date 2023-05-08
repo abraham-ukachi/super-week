@@ -53,9 +53,21 @@
   <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
   <meta name="description" content="Super Week is a 7-day school project to help students revisit the basics of PHP autoloading, namespaces, routing, and templating.">
-  
+
+  <!-- PHP (1): If the user was found... -->
+  <?php if ($userFound): ?>
+  <!-- ...PHP (1): Show the title w/ user id -->
+
   <!-- Title -->
-  <title>Users | Super Week</title>
+  <title>User #<?= $userId ?> | Super Week</title>
+
+  <?php else: ?> <!-- (Else|PHP (1)) -->
+
+  <!-- Title -->
+  <title>User NOT found :( | Super Week</title>
+
+  <?php endif; ?>
+  <!-- End of PHP (1) -->
 
 
   <!-- Fonts -->
@@ -95,8 +107,32 @@
 <!-- End of HEAD -->
   
 <body>
-  <code><?= APP_NAME ?> <span>Job 01</span></code>
-  <h1><?= $welcomeMessage ?></h1>
+  <code><?= APP_NAME ?> <span>Job 03</span></code>
+  <h1>User #<?= $userId ?></h1>
+
+
+  <!-- PHP (2): If the user was found... -->
+  <?php if ($userFound): ?>
+  <!-- ...PHP (2): Show the user's details in JSON format -->
+  
+  <pre><?= $userJSON ?></pre>
+
+  <?php else: ?> <!-- (Else|PHP (1)) -->
+
+  <!-- Status Messages -->
+  <div class="status-messages">
+    <!-- Error - Status Message -->
+    <div class="error status-message">
+      <span class="material-icons icon">error_outline</span>
+      <p class="message">User #<?= $userId ?> does not exist!</p>
+    </div>
+
+  </div>
+  <!-- End of Status Messages -->
+
+  <?php endif; ?>
+  <!-- End of PHP (1) -->
+
 </body>
 
 </html>

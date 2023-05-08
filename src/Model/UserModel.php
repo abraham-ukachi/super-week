@@ -472,6 +472,69 @@ class UserModel extends Database {
 
 
   /**
+   * Method used to find a user with the given `$userId` 
+   *
+   * @param string $userId - the id to find the user with
+   *
+   * @return array|false - Returns an array containing the user's details, or FALSE if the user was not found
+   *
+   */
+  public function findById(string $userId): array|false {
+    // Initialize the `result` boolean variable
+    $result = false;
+
+
+    // create a `find_user_by_id_query` sql query
+    $find_user_by_id_query = sprintf(<<<SQL
+      SELECT %s, %s, %s, %s, %s 
+      FROM %s
+      WHERE %s = :userId
+
+    SQL,
+
+    // select (fields)
+    self::FIELD_ID,
+    self::FIELD_EMAIL,
+    self::FIELD_FIRST_NAME,
+    self::FIELD_LAST_NAME,
+    self::FIELD_TOKEN,
+
+    // from (table)
+    self::TABLE_USERS,
+
+    // where (field)
+    self::FIELD_ID
+
+    );
+
+    try { // <- try to prepare and execute our query
+
+      // prepare the `find_user_by_id_query` as a PDO statement
+      $pdo_stmt = $this->pdo->prepare($find_user_by_id_query);
+
+      // execute our PDO statement with the given parameters
+      $pdo_stmt->execute([
+        ':userId' => $userId
+      ]);
+      
+      // fetch the results from `pdo_stmt` as an associative array
+      $result = $pdo_stmt->fetch(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) { // <- catch any PDOException errors
+
+      // log the error
+      error_log($e->getMessage());
+
+    }
+
+    // return the `result`
+    return $result;
+  }
+
+
+
+
+  /**
    * Method used to find a user with the given `$token` 
    *
    * @param string $token - the token to find the user with

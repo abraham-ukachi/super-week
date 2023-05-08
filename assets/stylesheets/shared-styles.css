@@ -472,3 +472,9 @@ button.goto-login {}
 button.goto-register {}
 
 /* === END OF GO TO BUTTONS === */
+
+
+pre {
+  font-size: 1rem;
+  opacity: 0.6;
+}
