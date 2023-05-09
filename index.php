@@ -69,7 +69,7 @@ use App\Controller\AuthController; // <- use the `AuthController`
 use App\Controller\RegisterController; // <- use the `RegisterController`
 use App\Controller\LoginController; // <- use the `LoginController`
 use App\Controller\LogoutController; // <- use the `LogoutController`
-
+use App\Controller\BookController; // <- use the `BookController`
 
 
 
@@ -245,7 +245,22 @@ $router->map('GET', '/users/[i:userId]', function($userId) {
 
 
 
+/**
+ * Route that displays the create or write page for a book.
+ *
+ * @example http://localhost/super-week/books/write
+ *
+ * @method GET
+ * @route '/books/write'
+ */
+$router->map('GET', '/books/write', function() {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
 
+  // show the create page
+  $bookController->showCreatePage();
+
+});
 
 
 
