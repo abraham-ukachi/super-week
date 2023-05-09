@@ -102,6 +102,17 @@
   <?php if ($this->isUserConnected) : ?>
 
   <main>
+  
+    <!-- Show Books -->
+    <a href="books">
+      <button contained>Show all books</button>
+    </a>
+
+    <!-- Create Book -->
+    <a href="books/write">
+      <button contained>Create a book</button>
+    </a>
+
     <!-- Log out - Button -->
     <a href="logout">
       <button id="logoutButton"contained>Log out <?= $this->userModel->getFullname() ?></button>
