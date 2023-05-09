@@ -134,7 +134,7 @@
         placeholder="Enter a book title"
         minlength="10"
         maxlength="60"
-        pattern="^[a-zA-Z]+$"
+        pattern="^[a-zA-Z\s\-]+$"
        />
 
       <!-- Input Indicator -->
@@ -164,6 +164,15 @@
     
   </form>
   <!-- End of Book Form -->
+
+  <!-- Go To Buttons -->
+  <div class="goto-buttons">
+    <!-- Go To Books - Button --> 
+    <button class="goto-books" contained hidden onclick="() => location.href = 'books'">See All Books</button>
+
+    <!-- Go To Home - Button --> 
+    <a href="home"><button class="goto-home" contained hidden>Go To Home Page</button></a>
+  </div>
 
 </body>
 
