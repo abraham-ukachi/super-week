@@ -314,7 +314,7 @@ Why not register our users with a form?
 
 
 ### Tasks for Job 02.3
-> ⬆️ UPDATE: A `feature/database` branch was created to add a **\`password\`** table to **`users`** table and generate fake data using `FakerPHP`.
+> ⬆️ UPDATE: A `feature/database` branch was created to add a **\`password\`** column to **`users`** table and generate fake data using `FakerPHP`.
 
 These are the following tasks of **Job 02.3** w/ their names and current status:
 
@@ -421,9 +421,9 @@ These are the following tasks of **Job 03** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`GET - Specific User - Route`* | [Done](./src/Controller/UserController.php)\* |
-| 2 | *`GET - Write Book - Route`* | [Done](./src/View/create-book.php) |
-| 3 | *`POST - Write Book - Route`* | *_In progress_* |
-| 4 | *`GET - Books - Route`* | Pending |
+| 2 | *`GET - Write Book - Route`* | [Done](./src/View/create-book.php)\* |
+| 3 | *`POST - Write Book - Route`* | [Done](./src/Controller/BookController.php)\* |
+| 4 | *`GET - Books - Route`* | *_In progress_* |
 | 5 | *`GET - Specific Book - Route`* | Pending |
 | 6 | *`GET - Logout - Route`* | [Done](./src/Controller/LogoutController.php)\* |
 
@@ -445,9 +445,10 @@ These are the branches that were created for the Job 03:
 | 1 | ![Logout - GUI - Screenshot](./.github/screenshots/job03_logout_gui.png) | ![Logout - CLI - Screenshot](./.github/screenshots/job03_logout_cli.png) |
 | 2 | ![User - GUI - Screenshot](./.github/screenshots/job03_user_gui.png) | ![User - CLI - Screenshot](./.github/screenshots/job03_user_cli.png)|
 | 3 | ![Create - Book - GUI - Screenshot](./.github/screenshots/job03_books_write_gui.png) | ![Test 1 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test1.gif) |
-| 4 | N/A | ![Test 2 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test2.gif) |
+| 4 | ![Write - Book - GUI - Giphy Capture](./.github/gifs/job03_book_write.gif) | ![Test 2 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test2.gif) |
 | 5 | N/A | ![Test 3 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test3.gif) |
 | 6 | N/A | ![Test 4 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test4.gif) |
+| 6 | N/A | ![POST - Book - CLI - Screenshot](./.github/screenshots/job03_books_write_post_cli.png) |
 | 7 | N/A | N/A |
 
 </details>
