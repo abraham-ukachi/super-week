@@ -484,4 +484,5 @@ button.goto-register {}
 pre {
   font-size: 1rem;
   opacity: 0.6;
+  white-space: pre-wrap;
 }
