@@ -444,7 +444,11 @@ These are the branches that were created for the Job 03:
 |:----|:----|:----|
 | 1 | ![Logout - GUI - Screenshot](./.github/screenshots/job03_logout_gui.png) | ![Logout - CLI - Screenshot](./.github/screenshots/job03_logout_cli.png) |
 | 2 | ![User - GUI - Screenshot](./.github/screenshots/job03_user_gui.png) | ![User - CLI - Screenshot](./.github/screenshots/job03_user_cli.png)|
-| 3 | N/A | N/A |
+| 3 | N/A | ![Test 1 - Book - CLI - Giphy Capture](./.github/screenshots/job03_book_test1.gif) |
+| 4 | N/A | ![Test 2 - Book - CLI - Giphy Capture](./.github/screenshots/job03_book_test2.gif) |
+| 5 | N/A | ![Test 3 - Book - CLI - Giphy Capture](./.github/screenshots/job03_book_test3.gif) |
+| 6 | N/A | ![Test 4 - Book - CLI - Giphy Capture](./.github/screenshots/job03_book_test4.gif) |
+| 7 | N/A | N/A |
 
 </details>
 
