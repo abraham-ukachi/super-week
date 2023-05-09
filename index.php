@@ -273,6 +273,24 @@ $router->map('GET', '/books/write', function() {
 
 
 
+/**
+ * Route that displays a specific book's page
+ *
+ * @example http://localhost/super-week/books/3
+ *
+ * @method GET
+ * @route '/books/[i:bookId]'
+ *
+ */
+$router->map('GET', '/books/[i:bookId]', function($bookId) {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
+
+  // show the specific book's page 
+  $bookController->showPage($bookId);
+});
+
+
 
 
 
