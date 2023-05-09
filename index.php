@@ -327,6 +327,28 @@ $router->map('POST', '/login', function() {
 
 
 
+/**
+ * Route that allows a user to write or create a book
+ *
+ * @example fetch('books/write', {method: 'POST', body: form})
+ *
+ * @method POST
+ * @route '/books/write'
+ */
+$router->map('POST', '/books/write', function() {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
+
+  // Call the `write()` method
+  $bookController->write();
+
+  // Get the response after the `write()` method is called
+  $response = $bookController->getResponse();
+
+  // echo the `response` in a JSON format
+  echo json_encode($response);
+
+});
 
 
 
