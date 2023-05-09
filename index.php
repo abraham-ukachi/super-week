@@ -243,6 +243,15 @@ $router->map('GET', '/users/[i:userId]', function($userId) {
 
 
 
+$router->map('GET', '/books', function() {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
+
+  // show the list page
+  $bookController->showListPage();
+
+});
+
 
 
 /**
@@ -261,7 +270,6 @@ $router->map('GET', '/books/write', function() {
   $bookController->showCreatePage();
 
 });
-
 
 
 
@@ -349,6 +357,9 @@ $router->map('POST', '/books/write', function() {
   echo json_encode($response);
 
 });
+
+
+
 
 
 
