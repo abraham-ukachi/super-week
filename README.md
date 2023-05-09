@@ -314,7 +314,7 @@ Why not register our users with a form?
 
 
 ### Tasks for Job 02.3
-> ⬆️ UPDATE: A `feature/database` branch was created to add a **\`password\`** table to **`users`** table and generate fake data using `FakerPHP`.
+> ⬆️ UPDATE: A `feature/database` branch was created to add a **\`password\`** column to **`users`** table and generate fake data using `FakerPHP`.
 
 These are the following tasks of **Job 02.3** w/ their names and current status:
 
@@ -421,10 +421,10 @@ These are the following tasks of **Job 03** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`GET - Specific User - Route`* | [Done](./src/Controller/UserController.php)\* |
-| 2 | *`GET - Write Book - Route`* | Pending |
-| 3 | *`POST - Write Book - Route`* | Pending |
-| 4 | *`GET - Books - Route`* | Pending |
-| 5 | *`GET - Specific Book - Route`* | Pending |
+| 2 | *`GET - Write Book - Route`* | [Done](./src/View/create-book.php) |
+| 3 | *`POST - Write Book - Route`* | [Done](./src/Controller/BookController.php)\* |
+| 4 | *`GET - Books - Route`* | [Done](./src/View/books.php) |
+| 5 | *`GET - Specific Book - Route`* | [Done](./src/View/book.php) |
 | 6 | *`GET - Logout - Route`* | [Done](./src/Controller/LogoutController.php)\* |
 
 > NOTE: (\*) = still needs to be updated
@@ -435,6 +435,7 @@ These are the branches that were created for the Job 03:
 
 - [feature/logout](https://github.com/abraham-ukachi/tree/feature/logout)
 - [feature/user](https://github.com/abraham-ukachi/tree/feature/user)
+- [books](https://github.com/abraham-ukachi/tree/books)
 - ?
 
 ### Random Screenshots for Job 03  
@@ -443,7 +444,12 @@ These are the branches that were created for the Job 03:
 |:----|:----|:----|
 | 1 | ![Logout - GUI - Screenshot](./.github/screenshots/job03_logout_gui.png) | ![Logout - CLI - Screenshot](./.github/screenshots/job03_logout_cli.png) |
 | 2 | ![User - GUI - Screenshot](./.github/screenshots/job03_user_gui.png) | ![User - CLI - Screenshot](./.github/screenshots/job03_user_cli.png)|
-| 3 | N/A | N/A |
+| 3 | ![Create - Book - GUI - Screenshot](./.github/screenshots/job03_books_write_gui.png) | ![Test 1 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test1.gif) |
+| 4 | ![Write - Book - GUI - Giphy Capture](./.github/gifs/job03_book_write.gif) | ![Test 2 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test2.gif) |
+| 5 | ![Book - GUI - Screenshot](./.github/screenshots/job03_book_gui.png) | ![Test 3 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test3.gif) |
+| 6 | N/A | ![Test 4 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test4.gif) |
+| 7 | N/A | ![POST - Book - CLI - Screenshot](./.github/screenshots/job03_books_write_post_cli.png) |
+| 8 | N/A | N/A |
 
 </details>
 
@@ -597,7 +603,9 @@ These are some of the things I did in addition to this project's [job requiremen
 | 4 | *`Login - Controller`* | **LoginController.php** | [Done](./src/Controller/LoginController)\* | 
 | 5 | *`Home - Controller`* | **HomeController.php** | [Done](./src/Controller/HomeController)\* | 
 | 6 | *`Logout - Controller`* | **LogoutController.php** | [Done](./src/Controller/LogoutController)\* | 
-| 7 | *`??`* | **??** | ?? | 
+| 7 | *`Book - Model`* | **BookModel.php** | [Done](./src/Model/BookModel)\* | 
+| 8 | *`Book - Controller`* | **BookController.php** | [Done](./src/Controller/BookController)\* | 
+| 9 | *`??`* | **??** | ?? | 
 
 
 > NOTE: (\*) = still needs to be updated. <br>

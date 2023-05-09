@@ -69,7 +69,7 @@ use App\Controller\AuthController; // <- use the `AuthController`
 use App\Controller\RegisterController; // <- use the `RegisterController`
 use App\Controller\LoginController; // <- use the `LoginController`
 use App\Controller\LogoutController; // <- use the `LogoutController`
-
+use App\Controller\BookController; // <- use the `BookController`
 
 
 
@@ -243,11 +243,52 @@ $router->map('GET', '/users/[i:userId]', function($userId) {
 
 
 
+$router->map('GET', '/books', function() {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
+
+  // show the list page
+  $bookController->showListPage();
+
+});
 
 
 
+/**
+ * Route that displays the create or write page for a book.
+ *
+ * @example http://localhost/super-week/books/write
+ *
+ * @method GET
+ * @route '/books/write'
+ */
+$router->map('GET', '/books/write', function() {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
+
+  // show the create page
+  $bookController->showCreatePage();
+
+});
 
 
+
+/**
+ * Route that displays a specific book's page
+ *
+ * @example http://localhost/super-week/books/3
+ *
+ * @method GET
+ * @route '/books/[i:bookId]'
+ *
+ */
+$router->map('GET', '/books/[i:bookId]', function($bookId) {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
+
+  // show the specific book's page 
+  $bookController->showPage($bookId);
+});
 
 
 
@@ -304,6 +345,31 @@ $router->map('POST', '/login', function() {
 
   // Get the response after the `login()` method is called
   $response = $authController->getResponse();
+
+  // echo the `response` in a JSON format
+  echo json_encode($response);
+
+});
+
+
+
+/**
+ * Route that allows a user to write or create a book
+ *
+ * @example fetch('books/write', {method: 'POST', body: form})
+ *
+ * @method POST
+ * @route '/books/write'
+ */
+$router->map('POST', '/books/write', function() {
+  // Instantiate the `BookController`
+  $bookController = new BookController();
+
+  // Call the `write()` method
+  $bookController->write();
+
+  // Get the response after the `write()` method is called
+  $response = $bookController->getResponse();
 
   // echo the `response` in a JSON format
   echo json_encode($response);
