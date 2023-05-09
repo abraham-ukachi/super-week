@@ -234,8 +234,14 @@ class BookController {
    * @return void
    */
   public function showListPage(): void {
+    // Get the user id as `userId`, if the user is connected 
+    $userId = $this->userModel->isConnected() ? $this->userModel->getId() : null;
+
     // Get all books as `$books`
-    $books = $this->bookModel->findAll();
+    $books = $this->bookModel->findAll($userId);
+
+    // Get the total number of books as `$totalBooks`
+    $totalBooks = count($books);
 
     // encode the `$books` into JSON as `$booksJSON`
     $booksJSON = json_encode($books, JSON_PRETTY_PRINT);
