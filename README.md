@@ -424,7 +424,7 @@ These are the following tasks of **Job 03** w/ their names and current status:
 | 2 | *`GET - Write Book - Route`* | [Done](./src/View/create-book.php) |
 | 3 | *`POST - Write Book - Route`* | [Done](./src/Controller/BookController.php)\* |
 | 4 | *`GET - Books - Route`* | [Done](./src/View/books.php) |
-| 5 | *`GET - Specific Book - Route`* | *_In progress_* |
+| 5 | *`GET - Specific Book - Route`* | [Done](./src/View/book.php) |
 | 6 | *`GET - Logout - Route`* | [Done](./src/Controller/LogoutController.php)\* |
 
 > NOTE: (\*) = still needs to be updated
@@ -446,10 +446,10 @@ These are the branches that were created for the Job 03:
 | 2 | ![User - GUI - Screenshot](./.github/screenshots/job03_user_gui.png) | ![User - CLI - Screenshot](./.github/screenshots/job03_user_cli.png)|
 | 3 | ![Create - Book - GUI - Screenshot](./.github/screenshots/job03_books_write_gui.png) | ![Test 1 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test1.gif) |
 | 4 | ![Write - Book - GUI - Giphy Capture](./.github/gifs/job03_book_write.gif) | ![Test 2 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test2.gif) |
-| 5 | N/A | ![Test 3 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test3.gif) |
+| 5 | ![Book - GUI - Screenshot](./.github/screenshots/job03_book_gui.png) | ![Test 3 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test3.gif) |
 | 6 | N/A | ![Test 4 - Book - CLI - Giphy Capture](./.github/gifs/job03_book_test4.gif) |
-| 6 | N/A | ![POST - Book - CLI - Screenshot](./.github/screenshots/job03_books_write_post_cli.png) |
-| 7 | N/A | N/A |
+| 7 | N/A | ![POST - Book - CLI - Screenshot](./.github/screenshots/job03_books_write_post_cli.png) |
+| 8 | N/A | N/A |
 
 </details>
 
