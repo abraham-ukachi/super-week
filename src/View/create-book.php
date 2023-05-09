@@ -132,9 +132,9 @@
         type="text" 
         name="title" 
         placeholder="Enter a book title"
-        minlength="10"
+        minlength="5"
         maxlength="60"
-        pattern="^[a-zA-Z\s\-]+$"
+        pattern="^[a-zA-Z0-9\s\-.]+$"
        />
 
       <!-- Input Indicator -->
@@ -168,7 +168,9 @@
   <!-- Go To Buttons -->
   <div class="goto-buttons">
     <!-- Go To Books - Button --> 
-    <button class="goto-books" contained hidden onclick="() => location.href = 'books'">See All Books</button>
+    <a href="books">
+      <button class="goto-books" contained hidden>See All Books</button>
+    </a>
 
     <!-- Go To Home - Button --> 
     <a href="home"><button class="goto-home" contained hidden>Go To Home Page</button></a>
