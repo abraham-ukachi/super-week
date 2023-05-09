@@ -42,6 +42,8 @@ const loginFormEl = document.getElementById("loginForm"); // <- login form eleme
 const formInputEls = document.querySelectorAll("form input");
 const gotoLoginBtnEl = document.querySelector("button.goto-login");
 const gotoHomeBtnEl = document.querySelector("button.goto-home");
+const gotoBooksBtnEl = document.querySelector("button.goto-books");
+const bookFormEl = document.getElementById("bookForm");
 
 
 
@@ -273,6 +275,76 @@ let handleLoginFormSubmit = async (event) => {
 
 
 
+/**
+ * Handler that is called whenever the `<form id="bookForm">` is submitted
+ *
+ * @param { SubmitEvent } event - The submit event object
+ */
+let handleBookFormSubmit = async (event) => {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+  
+  // get the form element as `formEl`
+  const formEl = event.currentTarget;
+
+  // create a form data with `formEl` as `formData`
+  const formData = new FormData(formEl);
+
+
+  // TODO: Validate each form field before submitting the form
+  
+
+  // Define our url
+  let url = 'books/write';
+
+  // Create a new request object
+  let request = new Request(url, {method: 'POST', body: formData});
+
+  // Send the request and 'await' a response #LOL ;)
+  let response = await fetch(request);
+  let responseData = await response.json(); // <- get the JSON representation of the `response` as `responseData`
+   
+  // DEBUG [4dbsmaster]: tell me about it ;)
+  console.log(responseData);
+  
+  // If the request was a success (i.e. user was connected successfully)...
+  if (responseData.success) {
+    // hide any error
+    hideError();
+
+    // ...show a success message
+    showSuccess(responseData.message);
+
+    // reset the form element
+    formEl.reset();
+
+    // hide the form element
+    formEl.hidden = true;
+
+    // show the go to home button
+    gotoHomeBtnEl.hidden = false;
+
+    // show the go to books button
+    gotoBooksBtnEl.hidden = false;
+
+  }else { // <- failed to register user...
+    // hide any success
+    hideSuccess();
+    // ...show an error message
+    showError(responseData.message);
+  }
+
+  
+   
+
+  // DEBUG [4dbsmaster]: tell me about it ;)
+  console.log(`\x1b[33m[handleRegisterFormSubmit]: formEl => \x1b[0m`, formEl);
+};
+
+
+
+
+
 
 
 
@@ -292,6 +364,12 @@ if (loginFormEl) {
 }
 
 
+// If there's a `bookForm` element...
+if (bookFormEl) {
+  // ..add a submit event listerner to it ;)
+  bookFormEl.addEventListener("submit", handleBookFormSubmit);
+}
+
 // If there's a `gotoLoginBtnEl` element...
 if (gotoLoginBtnEl) {
   // ...add a click event listener to it that redirects to the login page
@@ -305,6 +383,13 @@ if (gotoHomeBtnEl) {
   gotoHomeBtnEl.addEventListener("click", () => location.href = '');
 }
 
+  /*
+// If there's a `gotoBooksBtnEl` element...
+if (gotoBooksBtnEl) {
+  // ...add a click event listener to it that redirects to the home page
+  gotoBooksBtnEl.addEventListener("click", () => location.href = 'books');
+}
+*/
 
 
 // For all the form input element...
