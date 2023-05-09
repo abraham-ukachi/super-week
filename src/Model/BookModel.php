@@ -392,6 +392,16 @@ class BookModel extends Database {
     // fetch all the results from `pdo_stmt` as an associative array
     $results = $pdo_stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // HACK: Refactor the titles and contents in `$results` to prevent XSS attacks
+    $results = array_map(function($result) {
+      return [
+        self::FIELD_ID => $result[self::FIELD_ID],
+        self::FIELD_TITLE => htmlspecialchars($result[self::FIELD_TITLE]),
+        self::FIELD_CONTENT => htmlspecialchars(strip_tags($result[self::FIELD_CONTENT])),
+        self::FIELD_ID_USER => $result[self::FIELD_ID_USER]
+      ];
+    }, $results);
+
     // return the results
     return $results;
   }
