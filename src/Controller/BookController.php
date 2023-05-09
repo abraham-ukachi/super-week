@@ -47,12 +47,25 @@ namespace App\Controller;
 // use some models
 use App\Model\UserModel;
 use App\Model\BookModel;
+// use some controller helpers
+use App\Controller\Helper\ResponseHandler;
+
+
+// use some PHP's core classes
+use Exception;
+
+
+
+
 
 
 
 
 // Declare a class that represents the `Book` controller,
 class BookController {
+  // using the `ResponseHandler` controller helper / trait in this class  
+  use ResponseHandler;
+
 
   // declare some constants..
   // pages
@@ -66,7 +79,7 @@ class BookController {
   private BookModel $bookModel;
 
 
-  /**
+/**
    * Constructor of the class
    * This method is executed automatically whenever this class is instantiated
    */
@@ -99,6 +112,64 @@ class BookController {
     // return the JSON representation of the `$book` array
     return json_encode($book);
   }
+
+  /**
+   * Method used to create a new book
+   *
+   * @return bool - Whether the book was created sucessfully or not
+   */
+  public function write(): bool {
+    // If the user is not connected...
+    if (!$this->userModel->isConnected()) {
+      // ...redirect the user to the login page
+      $this->redirect(self::PAGE_LOGIN);
+    }
+
+    // Initialize the `result` boolean variable as `false`
+    $result = false;
+
+    // Let's try to create a new book
+    try {
+
+      // Get the current user id as `userId` 
+      $userId = $this->userModel->getId();
+
+      // Get the request body as `$requestBody`
+      $requestBody = $this->getRequestBody(true); // <- TRUE = from POST
+
+      // Get the book's title and content from `$requestBody` as `$bookTitle` and `$bookContent` respectively
+      $bookTitle = $requestBody['title'];
+      $bookContent = $requestBody['content'];
+
+
+      // Create a new book with the above details
+      $newBook = $this->bookModel->create($bookTitle, $bookContent, $userId);
+
+      // a book was created if `$newBook` is an array and it's length is greater than 0
+      $bookCreated = is_array($newBook) && count($newBook) > 0;
+      
+      // If the book was created successfully...
+      if ($bookCreated) {
+        // ...update the `result` variable to `true`
+        $result = true;
+
+        // ...and update the response accordingly
+        $this->updateResponse(true, self::$STATUS_SUCCESS_CREATED, 'Book created successfully', $newBook);
+      }else {
+        // ...else, update the response accordingly
+        $this->updateResponse(false, self::$STATUS_ERROR_UNPROCESSABLE_ENTITY, 'An error occured while creating the book');
+      }
+
+
+    } catch (Exception $e) {
+      // If an error occured, update the response accordingly
+      $this->updateResponse(false, self::$STATUS_ERROR_INTERNAL_ERROR, $e->getMessage());
+    }
+
+    // return `result`
+    return $result;
+  }
+
 
 
   // PUBLIC METHODS
@@ -198,6 +269,35 @@ class BookController {
   // PRIVATE SETTERS
 
   // PRIVATE GETTERS
+
+  /**
+   * Method used to get the request body
+   *
+   * @param bool $fromPOST : If TRUE, the request body will be gotten from `$_POST`, otherwise, it will be gotten from `php://input`
+   *
+   * @return array|bool : Returns the request body as an array if it is not empty, FALSE otherwise
+   */
+  private function getRequestBody($fromPOST = false) {
+    // Get the request body as `$requestBody`
+    $requestBody = ($fromPOST) ? $_POST : json_decode(file_get_contents('php://input'), true);
+
+    // If the request body is empty...
+    if (empty($requestBody)) {
+      // ...update the response
+      $this->updateResponse(false, self::$STATUS_ERROR_UNPROCESSABLE_ENTITY, 'Request body is empty');
+
+      // return FALSE
+      return false;
+    }
+
+    // TODO: Validate all the items in the request body
+
+    // return the request body
+    return $requestBody;
+  }
+
+
+
 
   // PRIVATE METHODS
 
