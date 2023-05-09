@@ -252,6 +252,18 @@ class UserModel extends Database {
   }
 
 
+  /**
+   * Returns a total count of all the users in the database
+   *
+   * @return int
+   */
+  public function countAll(): int {
+    // find all the users in the database
+    $allUsers = $this->findAll();
+    // return the toal count of all the users in the database
+    return count($allUsers);
+  }
+
   // PUBLIC METHODS
 
 
