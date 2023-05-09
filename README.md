@@ -34,7 +34,7 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | 6 | [*`Job 02.3`*](#Job-023) | [Done](./src/Controller/AuthController.php)\* |
 | 7 | [*`Job 02.4`*](#Job-024) | [Done](./src/Controller/AuthController.php)\* |
 | 8 | [*`Job 03`*](#Job-03) | [Done](./src/Controller/BookController.php)\* |
-| 9 | [*`Job 04`*](#Job-04) | Pending |
+| 9 | [*`Job 04`*](#Job-04) | *_In progress_* |
 | 10 | [*`Job +`*](#Job-) | Pending |
 
 
