@@ -424,7 +424,7 @@ These are the following tasks of **Job 03** w/ their names and current status:
 | 2 | *`GET - Write Book - Route`* | [Done](./src/View/create-book.php) |
 | 3 | *`POST - Write Book - Route`* | [Done](./src/Controller/BookController.php)\* |
 | 4 | *`GET - Books - Route`* | [Done](./src/View/books.php) |
-| 5 | *`GET - Specific Book - Route`* | Pending |
+| 5 | *`GET - Specific Book - Route`* | *_In progress_* |
 | 6 | *`GET - Logout - Route`* | [Done](./src/Controller/LogoutController.php)\* |
 
 > NOTE: (\*) = still needs to be updated
