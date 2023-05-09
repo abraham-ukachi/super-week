@@ -192,7 +192,8 @@ label[raised] {
 }
 
 /* Input Styles */
-input {
+input, textarea {
+  font-family: 'Mulish';
   background: inherit;
   color: inherit;
   border: 0;
@@ -202,6 +203,11 @@ input {
   line-height: 2rem;
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
+  resize: none;
+}
+
+#bookForm .content {
+  height: 256px;
 }
 
 /* Password Input */
@@ -353,7 +359,8 @@ button[contained]:focus-visible, a[role="button"][contained]:focus-visible {
  * 1. whenever an input inside a form gains focus
  * 2. if the input indicator has a `no-effect` attribute
  * */
-input:focus ~ .input-indicator > span[val], .input-indicator[no-effect] span[val]  {
+input:focus ~ .input-indicator > span[val], textarea:focus ~ .input-indicator > span[val], 
+.input-indicator[no-effect] span[val]  {
   width: 100%;
   opacity: 1;
 }
