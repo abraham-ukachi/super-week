@@ -482,7 +482,7 @@ These are the following tasks of **Job 04** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`Basic Home Structure`* | [Done](./src/View/home.php) | 
-| 2 | *`Async Functions`* | Pending |
+| 2 | *`Async Functions`* | *_In progress_* |
 | 3 | *`HTMLElements w/ JavaScript`* | Pending |
 
 > NOTE: (\*) = still needs to be updated
@@ -627,8 +627,11 @@ These are some of the things I did in addition to this project's [job requiremen
 
 ## TODOs
 
+- [ ] Rename `UserController` to **`UsersController`**
+- [ ] Rename `BookController` to **`BooksController`**
 - [ ] Optimize all `.php` files
 - [ ] Optimize all `.css` files
 - [ ] Optimize all `.js` files
 - [ ] Remove unnecessary comments
-- [ ] Add screenshots
+- [x] Add screenshots
+- [x] Add giphy captures
