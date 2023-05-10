@@ -486,3 +486,70 @@ pre {
   opacity: 0.6;
   white-space: pre-wrap;
 }
+
+
+
+/* ===>>> ASYNC ACTIONS <<<=== */
+
+
+span.divider {
+  width: 100%;
+  height: 0.25rem;
+  margin: 1rem 0;
+  
+  outline: 2px dotted var(--outline-color);
+}
+
+
+.async-actions-wrapper {
+
+}
+
+.async-actions {
+
+}
+
+.async-action {
+  border: 1px solid #595959;
+  margin: 2rem auto;
+  width: 95%;
+  max-width: 800px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.async-action:hover {
+  border-color: white;
+  background: #191412;
+}
+
+
+.async-action > input {
+  width: 100%;
+}
+
+.async-action > button {
+  width: 100%;
+}
+
+.async-action > .result {
+  background: black;
+  color: var(--outline-color);
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  width: 100%;
+
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+
+
+
+/* === END OF ASYNC ACTIONS === */
