@@ -481,9 +481,9 @@ These are the following tasks of **Job 04** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *`Basic Home Structure`* | *_In progress_*
-| 2 | *`Async Functions`* | Pending
-| 3 | *`HTMLElements w/ JavaScript`* | Pending
+| 1 | *`Basic Home Structure`* | [Done](./src/View/home.php) | 
+| 2 | *`Async Functions`* | Pending |
+| 3 | *`HTMLElements w/ JavaScript`* | Pending |
 
 > NOTE: (\*) = still needs to be updated
 
@@ -499,7 +499,10 @@ These are the branches that were created for the Job 04:
 
 | No. | GUI | CLI |
 |:----|:----|:----|
-| 1 | - | - |
+| 1 | ![Overview - GUI - Screenshot](./.github/screenshots/job04_overview_gui.png) | ![Logout - CLI - Screenshot](./.github/screenshots/job04_overview_cli.png) |
+| 2 | N/A | N/A |
+| 3 | N/A | N/A |
+| 4 | N/A | N/A |
 
 
 </details>
