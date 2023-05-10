@@ -481,10 +481,18 @@ These are the following tasks of **Job 04** w/ their names and current status:
 
 | No. | Name | Status |
 |:----|:-----|:-------|
-| 1 | *``* | Pending
-| 2 | *``* | Pending
+| 1 | *`Basic Home Structure`* | *_In progress_*
+| 2 | *`Async Functions`* | Pending
+| 3 | *`HTMLElements w/ JavaScript`* | Pending
 
 > NOTE: (\*) = still needs to be updated
+
+
+### Branches for Job 04
+
+These are the branches that were created for the Job 04:
+
+- [feature/async-home-buttons](https://github.com/abraham-ukachi/tree/feature/async-home-buttons)
 
 
 ### Random Screenshots for Job 04  
