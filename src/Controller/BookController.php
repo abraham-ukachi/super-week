@@ -103,15 +103,63 @@ class BookController {
    *
    * @param int $bookId - The id of the book to get
    *
-   * @return string - JSON representation of the book
+   * @return array - Array representation of the book, or `false` if no book was found
    */
-  public function get($bookId): string {
+  public function get($bookId): array|false {
     // Get the book with the specified id
     $book = $this->bookModel->findById($bookId);
-    
+
+   
+    // If no book was found...
+    if (!$book) {
+      // ...update the response accordingly
+      $this->updateResponse(false, self::$STATUS_ERROR_NOT_FOUND, 'No book found', ['book' => []]);
+
+    }else { // <- a book was found
+      // ...update the response accordingly
+      $this->updateResponse(true, self::$STATUS_SUCCESS_OK, 'Book retrieved successfully', ['book' => $book]);
+    }
+
+    // return the `book`
+    return $book;
+
     // return the JSON representation of the `$book` array
-    return json_encode($book);
+    // return json_encode($book);
   }
+
+  /**
+   * Method used get a list of all books 
+   * NOTE: This is similar to the `list()` method below, 
+   *       but this returns an array instead of a JSON string
+   *
+   * @return array - Array representation of all users
+   */
+  public function getAll(): array {
+    // TODO: Use a try-catch block to catch any errors that may occur
+
+    // Check if the user is connected as `userIsConnected`
+    $userIsConnected = $this->userModel->isConnected();
+
+    // Get the user's id as `userId`
+    $userId = $userIsConnected ? $this->userModel->getId() : null;
+
+    // Get all books of a specific the user as `$books` if he/she is connected, else get all public books
+    $books = $userIsConnected ? $this->bookModel->findAll($userId) : $this->bookModel->findAll();
+
+    // If no books were found...
+    if (!$books) {
+      // ...update the response accordingly
+      $this->updateResponse(false, self::$STATUS_ERROR_NOT_FOUND, 'No books found', ['books' => []]);
+
+    }else { // <- books were found
+      // ...update the response accordingly
+      $this->updateResponse(true, self::$STATUS_SUCCESS_OK, 'Books retrieved successfully', ['books' => $books]);
+    }
+
+    // return `books`
+    return $books;
+  }
+
 
   /**
    * Method used to create a new book
@@ -231,14 +279,16 @@ class BookController {
   /**
    * Method used to show the list page of all books
    *
+   * @param array|null $books - The list of books to show
+   *
    * @return void
    */
-  public function showListPage(): void {
+  public function showListPage(?array $books = null): void {
     // Get the user id as `userId`, if the user is connected 
     $userId = $this->userModel->isConnected() ? $this->userModel->getId() : null;
 
     // Get all books as `$books`
-    $books = $this->bookModel->findAll($userId);
+    $books = $books ?? $this->bookModel->findAll($userId);
 
     // Get the total number of books as `$totalBooks`
     $totalBooks = count($books);
