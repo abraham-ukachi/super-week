@@ -401,3 +401,463 @@ for (let formInputEl of formInputEls) {
     hideError();
   });
 }
+
+
+
+
+/* ====== ASYNC FUNCTIONS ====== */
+
+
+/**
+ * A function that gets all the users from our server, 
+ * using a predefined `super-week` route
+ *
+ * @returns { Promise<Array<User>> } - An array of users
+ */
+let getUsers = () => {
+  return new Promise(async (resolve, reject) => {
+    // define our url
+    let url = 'users';
+    // create a new request object
+    // The 'raw/json' header is used to tell the server that we want the response as a JSON object
+    let request = new Request(url, {method: 'GET', headers: {'Response-Type': 'raw/json'}});
+    // fetch the request and 'await' a response
+    let response = await fetch(request);
+    // get the JSON representation of the `response` as `responseData`
+    let responseData = await response.json();
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    // console.log(responseData);
+
+    // If the request was a success...
+    if (responseData.success) {
+      // resolve the promise with the users
+      resolve(responseData.users);
+
+    }else { // <- failed to get users...
+      // reject the promise with the error message
+      reject(responseData.message);
+    }
+  });
+}
+
+
+/**
+ * A function that gets all the books from our server, 
+ * using a predefined `super-week` route
+ *
+ * @returns { Promise<Array<Book>> } - An array of books
+ */
+let getBooks = () => {
+  return new Promise(async (resolve, reject) => {
+    // define our url
+    let url = 'books';
+    // create a new request object
+    // The 'raw/json' header is used to tell the server that we want the response as a JSON object
+    let request = new Request(url, {method: 'GET', headers: {'Response-Type': 'raw/json'}});
+    // fetch the request and 'await' a response
+    let response = await fetch(request);
+    // get the JSON representation of the `response` as `responseData`
+    let responseData = await response.json();
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    // console.log(responseData);
+
+    // If the request was a success...
+    if (responseData.success) {
+      // resolve the promise with the books
+      resolve(responseData.books);
+
+    }else { // <- failed to get books...
+      // reject the promise with the error message
+      reject(responseData.message);
+    }
+  });
+}
+
+
+
+/**
+ * A function that gets a specific user from our server, 
+ * using a predefined `super-week` route
+ *
+ * @param { Number } userId - The id of the user to get
+ * @returns { Promise<Array<Book>> } - An array of books
+ */
+let getUser = (userId) => {
+  return new Promise(async (resolve, reject) => {
+    // define our url
+    let url = 'users/' + userId;
+    // create a new request object
+    // The 'raw/json' header is used to tell the server that we want the response as a JSON object
+    let request = new Request(url, {method: 'GET', headers: {'Response-Type': 'raw/json'}});
+    // fetch the request and 'await' a response
+    let response = await fetch(request);
+    // get the JSON representation of the `response` as `responseData`
+    let responseData = await response.json();
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    console.log(responseData);
+
+    // If the request was a success...
+    if (responseData.success) {
+      // resolve the promise with the user
+      resolve(responseData.user);
+
+    }else { // <- failed to get the user...
+      // reject the promise with the error message
+      reject(responseData.message);
+    }
+  });
+}
+
+
+
+/**
+ * A function that gets a specific book from our server, 
+ * using a predefined `super-week` route
+ *
+ * @param { Number } bookId - The id of the book to get
+ * @returns { Promise<Array<Book>> } - An array of books
+ */
+let getBook = (bookId) => {
+  return new Promise(async (resolve, reject) => {
+    // define our url
+    let url = 'books/' + bookId;
+    // create a new request object
+    // The 'raw/json' header is used to tell the server that we want the response as a JSON object
+    let request = new Request(url, {method: 'GET', headers: {'Response-Type': 'raw/json'}});
+    // fetch the request and 'await' a response
+    let response = await fetch(request);
+    // get the JSON representation of the `response` as `responseData`
+    let responseData = await response.json();
+
+    // DEBUG [4dbsmaster]: tell me about it ;)
+    // console.log(responseData);
+
+    // If the request was a success...
+    if (responseData.success) {
+      // resolve the promise with the books
+      resolve(responseData.book);
+
+    }else { // <- failed to get the book...
+      // reject the promise with the error message
+      reject(responseData.message);
+    }
+  });
+}
+
+
+
+/* == END OF ASYNC FUNCTIONS == */
+
+
+/**
+ * Hides the `<ul class="result">` element of the given action element
+ * NOTE: This function will remove all its children.
+ *
+ * @param { String } action - The result action (e.g. 'users', 'books', 'user' & 'book')
+ * @param { HTMLButtonElement } buttonEl - The button element that triggered this function
+ */
+let hideResultOf = (action, buttonEl) => {
+  // get the `resultEl` element
+  let resultEl = document.querySelector(`.async-action.${action} .result`);
+
+  // remove all the children of `usersResultEl`, 
+  // well technically, we're just replacing it with '...' #LOL
+  resultEl.innerHTML = '...';
+
+  // remove the `completed` attribute from the button element
+  buttonEl.removeAttribute('completed');
+
+  // rename the `<span>` in button element (e.g: 'show users')
+  buttonEl.querySelector('span').innerHTML = `show ${action} ${['user', 'book'].includes(action) ? 'info' : ''}`;
+
+};
+
+
+/**
+ * Returns the HTML template for the given `user`
+ *
+ * @param { Object } user - The user object
+ *
+ * @returns { String } - The HTML template for the given `user`
+ */
+let getUserTemplate = (user) => {
+  return `
+    <!-- User -->
+    <li class="user" data-id="${user.id}" title="Token: ${user.token}">
+      <a href="users/${user.id}" target="_blank" class="link" title="Click to open the user in a new tab">
+
+        <!-- Initials -->
+        <span class="initials"><b>${user.first_name[0]}${user.last_name[0]}</b></span>
+
+        <!-- Info -->
+        <div class="info">
+          <h3 class="fullname">${user.first_name} ${user.last_name}</h3>
+          <p class="email">${user.email}</p>
+        </div>
+        
+        <!-- Id -->
+        <span class="id">id: <em>${user.id}</em></span>
+
+      </a>
+     </li>
+  `;
+};
+
+
+
+/**
+ * Returns the HTML template for the given `book`
+ *
+ * @param { Object } book - The book object
+ *
+ * @returns { String } - The HTML template for the given `book`
+ */
+let getBookTemplate = (book) => {
+  return `
+    <!-- Book -->
+    <li class="book" data-id="${book.id}">
+      <a href="books/${book.id}" target="_blank" class="link" title="Click to open the book in a new tab">
+
+        <!-- Icon -->
+        <span class="material-icons icon">book</span>
+
+        <!-- Info -->
+        <div class="info">
+          <h3 class="title" title="${book.title}">${book.title}</h3>
+          <p class="content" title="${book.content}">${(book.content.length > 100) ? book.content.substr(0, 100) + '...' : book.content}</p>
+        </div>
+        
+        <!-- Id -->
+        <span class="id">id: <em>${book.id}</em></span>
+
+      </a>
+     </li>
+  `;
+};
+
+/**
+ * Shows the given users in the `<ul class="result">` element of the `users` action element
+ *
+ * @param { Array<User> } users - An array of users
+ * @param { HTMLButtonElement } buttonEl - The button element that triggered this function
+ */
+let showUsers = (users, buttonEl) => {
+  // get the next sibling of the button element, which is the `<ul class="result">` element as `resultEl`
+  let resultEl = buttonEl.nextElementSibling;
+
+  // DEBUG [4dbsmaster]: tell me about it ;) 
+  console.log(`\x1b[33m[showUsers]: users => \x1b[0m`, users);
+
+  // add the `completed` attribute to the button element
+  buttonEl.setAttribute('completed', '');
+
+  // rename the `<span>` in button element accordingly
+  buttonEl.querySelector('span').innerHTML = `hide users`;
+  
+  // remove the ellipsis from the `resultEl`
+  resultEl.innerHTML = '';
+
+  // loop through the users
+  for (let user of users) {
+    // ..get the user template as `userTemplate`
+    let userTemplate = getUserTemplate(user);
+    // insert the `userTemplate` into the `resultEl`
+    resultEl.insertAdjacentHTML('beforeend', userTemplate);
+  }
+
+};
+
+
+/**
+ * Shows the given books in the `<ul class="result">` element of the `books` action element
+ *
+ * @param { Array<Book> } books - An array of books
+ * @param { HTMLButtonElement } buttonEl - The button element that triggered this function
+ */
+let showBooks = (books, buttonEl) => {
+  // get the next sibling of the button element, which is the `<ul class="result">` element as `resultEl`
+  let resultEl = buttonEl.nextElementSibling;
+
+  // DEBUG [4dbsmaster]: tell me about it ;) 
+  console.log(`\x1b[33m[showBooks]: books => \x1b[0m`, books);
+
+  // add the `completed` attribute to the button element
+  buttonEl.setAttribute('completed', '');
+
+  // rename the `<span>` in button element accordingly
+  buttonEl.querySelector('span').innerHTML = `hide books`;
+
+  // remove the ellipsis from the `resultEl`
+  resultEl.innerHTML = '';
+
+  // loop through the books
+  for (let book of books) {
+    // ..get the book template as `userTemplate`
+    let bookTemplate = getBookTemplate(book);
+    // insert the `bookTemplate` into the `resultEl`
+    resultEl.insertAdjacentHTML('beforeend', bookTemplate);
+  }
+
+};
+
+
+
+/**
+ * Shows the specific user in the `<ul class="result">` element of the `user` action element
+ *
+ * @param { Object<User> } user - A user object
+ * @param { HTMLButtonElement } buttonEl - The button element that triggered this function
+ */
+let showUser = (user, buttonEl) => {
+  // get the next sibling of the button element, which is the `<ul class="result">` element as `resultEl`
+  let resultEl = buttonEl.nextElementSibling;
+
+  // DEBUG [4dbsmaster]: tell me about it ;) 
+  console.log(`\x1b[33m[showUsers]: user => \x1b[0m`, user);
+
+  // add the `completed` attribute to the button element
+  buttonEl.setAttribute('completed', '');
+
+  // rename the `<span>` in button element accordingly
+  buttonEl.querySelector('span').innerHTML = `hide user info`;
+
+
+  // remove the ellipsis from the `resultEl`
+  resultEl.innerHTML = '';
+
+  // get the user template as `userTemplate`
+  let userTemplate = getUserTemplate(user);
+  // insert the `userTemplate` into the `resultEl`
+  resultEl.insertAdjacentHTML('beforeend', userTemplate);
+   
+};
+
+
+/**
+ * Shows the specific book in the `<ul class="result">` element of the `book` action element
+ *
+ * @param { Object<Book> } book - A book object
+ * @param { HTMLButtonElement } buttonEl - The button element that triggered this function
+ */
+let showBook = (book, buttonEl) => {
+  // get the next sibling of the button element, which is the `<ul class="result">` element as `resultEl`
+  let resultEl = buttonEl.nextElementSibling;
+
+  // DEBUG [4dbsmaster]: tell me about it ;) 
+  console.log(`\x1b[33m[showBook]: book => \x1b[0m`, book);
+
+  // add the `completed` attribute to the button element
+  buttonEl.setAttribute('completed', '');
+
+  // rename the `<span>` in button element accordingly
+  buttonEl.querySelector('span').innerHTML = `hide book info`;
+  
+  // remove the ellipsis from the `resultEl`
+  resultEl.innerHTML = '';
+  
+  // get the book template as `bookTemplate`
+  let bookTemplate = getBookTemplate(book);
+  // insert the `bookTemplate` into the `resultEl`
+  resultEl.insertAdjacentHTML('beforeend', bookTemplate);
+
+};
+
+
+
+
+// Define a function that handles the click event on the `asyncButtonEls`
+let handleAsyncButtonClick = async (event) => {
+  // get the button element as `buttonEl`
+  let buttonEl = event.currentTarget;
+
+  let inputEl = buttonEl.previousElementSibling;
+
+  // get the button's `data-action` attribute as `action`
+  let action = buttonEl.dataset.action;
+
+  // get the button's `completed` attribute as `isComplete`
+  let isCompleted = buttonEl.hasAttribute('completed');
+
+  // Hide the users result, if the action was completed
+  if (isCompleted) { hideResultOf(action, buttonEl); return }
+
+
+  // switch on the `action`...
+  switch (action) {
+    case 'users':
+      // get all the users from the server
+      let users = await getUsers();
+      // show the users result
+      showUsers(users, buttonEl);
+      break;
+
+    case 'books':
+      // get all the books from the server
+      let books = await getBooks();
+      // show the books result
+      showBooks(books, buttonEl);
+      break;
+
+    case 'user':
+      // get the value of the input element as `userId`
+      let userId = inputEl.value;
+      
+      // DEBUG [4dbsmaster]: tell me about it ;)
+      console.log(`\x1b[33m[handleAsyncButtonClick]: userId => \x1b[0m`, userId);
+
+      // If there's a user id...
+      if (typeof userId !== 'undefined' && userId !== '') {
+
+        // Initialize the user object variable
+        // let user = {};
+
+        try {
+          // ...get the specific user from the server using the `userId`
+          let user = await getUser(userId);
+
+          // show the user
+          showUser(user, buttonEl);
+
+        } catch (error) {
+          // DEBUG [4dbsmaster]: tell me about it ;)
+          console.log(`\x1b[33m[handleAsyncButtonClick]: error => \x1b[0m`, error);
+        }
+
+      }
+
+      break;
+
+    case 'book':
+      // get the value of the input element as `bookId`
+      let bookId = inputEl.value;
+
+      // If there's a book id...
+      if (typeof bookId !== 'undefined' && bookId !== '') {
+        // ...get the specific book from the server using the `bookId`
+        let book = await getBook(bookId);
+        // show the book 
+        showBook(book, buttonEl);
+      }
+
+      break;
+
+    default:
+      // do nothing 4 now ;)
+  }
+
+
+};
+
+
+
+// Get all async-button elements as `asyncButtonEls`
+let asyncButtonEls = document.querySelectorAll('.async-button');
+
+// Loop through all the `asyncButtonEls`...
+for (let asyncButtonEl of asyncButtonEls) {
+  // ...add a click event listener to each of them
+  asyncButtonEl.addEventListener('click', handleAsyncButtonClick);
+}
