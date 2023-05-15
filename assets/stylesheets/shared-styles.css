@@ -486,3 +486,262 @@ pre {
   opacity: 0.6;
   white-space: pre-wrap;
 }
+
+
+
+/* ===>>> ASYNC ACTIONS <<<=== */
+
+
+span.divider {
+  width: 100%;
+  height: 0.25rem;
+  margin: 1rem 0;
+  
+  outline: 2px dotted var(--outline-color);
+}
+
+
+.async-actions-wrapper {
+
+}
+
+.async-actions {
+
+}
+
+.async-action {
+  border: 1px solid #595959;
+  margin: 2rem auto;
+  width: 95%;
+  max-width: 800px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.async-button:not([completed]) ~ .result {
+  padding: 1rem;
+}
+
+.async-action:hover {
+  border-color: white;
+  background: #191412;
+}
+
+
+.async-action > input {
+  width: 100%;
+}
+
+.async-action > button {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.async-action > .result {
+  display: flex;
+  flex-direction: column;
+
+  background: black;
+  color: var(--outline-color);
+  box-sizing: border-box;
+  padding: 1rem 0;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  width: 100%;
+  
+  list-style: none;
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+
+  overflow: auto;
+  max-height: 512px;
+}
+
+.result .user {
+  display: flex;
+  flex-direction: row;
+
+  pointer: default;
+}
+
+.result .user:hover {
+  background: #171616;
+}
+
+.result .link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1rem;
+
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.user .initials {
+  text-transform: uppercase;
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  text-align: center;
+  background: #324d21;
+  color: #cae4c9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.user .info {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0.5rem;
+  flex: 1;
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+
+.user .info::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--outline-color);
+  margin: 0;
+  opacity: 0.1;
+}
+
+
+.user .fullname { 
+  margin: 0.5rem 0 0;
+}
+
+.user .email {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.user .id {
+  color: #3b3b3b;
+}
+
+.user .id em {
+  color: var(--primary-color);
+}
+
+
+
+
+
+
+.result .book {
+  display: flex;
+  flex-direction: row;
+
+  pointer: default;
+}
+
+.result .book:hover {
+  background: #171616;
+}
+
+
+.book .icon {
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  font-size: 3rem;
+}
+
+.book .info {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0.5rem;
+  flex: 1;
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+
+.book .info::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--outline-color);
+  margin: 0;
+  opacity: 0.1;
+}
+
+
+.book .title { 
+  margin: 0.5rem 0 0;
+}
+
+.book .content {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.book .id {
+  color: #3b3b3b;
+}
+
+.book .id em {
+  color: var(--primary-color);
+}
+
+
+/* === END OF ASYNC ACTIONS === */
+
+
+
+@media screen and (max-width: 768px) {
+
+  .user .fullname {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .user .email {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+
+
+  .book .icon {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
+    font-size: 2rem;
+  }
+
+  .user .id {
+  }
+}

@@ -97,6 +97,7 @@
 <body>
   <code><?= APP_NAME ?> <span>Job 02.2</span></code>
   <h1><?= $welcomeMessage ?></h1>
+  <pre><?= $usersList ?></pre>
 </body>
 
 </html>

@@ -88,8 +88,8 @@
     
   </script>
 
-  <!-- Script #JIC -->
-  <!-- <script type="module" src="assets/scripts/home.js" defer></script> -->
+  <!-- Script -->
+  <script type="module" src="assets/scripts/app.js" defer></script>
   
 </head>
 <!-- End of HEAD -->
@@ -154,6 +154,53 @@
 
   <?php endif; ?>
   <!-- End of PHP (1) -->
+
+
+
+  <span class="divider"></span>
+
+  
+  <code><?= APP_NAME ?> <span>Job 04</span></code>
+  <h1>Asynchronous Actions</h1>
+
+  <!-- Async Actions - Wrapper -->
+  <div class="async-actions-wrapper">
+
+    <!-- Async Action: Users -->
+    <div class="async-action users">
+      <button class="async-button" data-action="users" outlined>
+        <span>Show Users</span>
+      </button>
+      <ul class="result">...</div>
+    </div> 
+
+    <!-- Async Action: Books -->
+    <div class="async-action books">
+      <button class="async-button" data-action="books" outlined>
+        <span>Show Books</span>
+      </button>
+      <ul class="result">...</div>
+    </div>
+
+    <!-- Async Action: User -->
+    <div class="async-action user">
+      <input type="number" placeholder="Enter user ID" />
+      <button class="async-button" data-action="user" outlined>
+        <span>Show user info</span>
+      </button>
+      <ul class="result">...</div>
+    </div> 
+
+    <!-- Async Action: Book -->
+    <div class="async-action book">
+      <input type="number" placeholder="Enter book ID" />
+      <button class="async-button" data-action="book" outlined>
+        <span>Show book info</span>
+      </button>
+      <ul class="result">...</div>
+    </div>
+  </div>
+
 </body>
 
 </html>

@@ -134,21 +134,30 @@ $router->map('GET', '/[home:page]?', function(?string $page = null) {
  *
  */
 $router->map('GET', '/users', function() {
-  // Create a welcome message as per project requirement  
-  $welcomeMessage = "Welcome to the user's list";
-
-  // Require the users page from 'View/'
-  require __DIR__ . '/src/View/users.php';
-
-
   // Instantiate the `UserController`
   $userController = new UserController();
+  // get all users as `users`
+  $users = $userController->getAll();
+  
+  // Check if there's a header with the name 'Response-Type',
+  // and assign its value to a variable named `responseType`
+  $responseType = $_SERVER['HTTP_RESPONSE_TYPE'] ?? null;
 
-  // get a list of all users as `usersList`
-  $usersList = $userController->list();
+  // If the `responseType` is `raw/json`...
+  if ($responseType === 'raw/json') {
+    // ...get the `response` from `userController`
+    $response = $userController->getResponse();
 
-  // echo the `usersList` in a `pre` tag
-  echo "<pre>" . $usersList . "</pre>";
+    // echo the `response` in a `json` format
+    echo json_encode($response, JSON_PRETTY_PRINT);
+
+    return; // <- stop the code execution here ;)
+  }
+
+  // At this point, the `responseType` is not `raw/json`,
+  // so we'll just show the list page, as per project requirement
+  $userController->showListPage($users);
+
 });
 
 
@@ -235,8 +244,28 @@ $router->map('GET', '/logout', function() {
 $router->map('GET', '/users/[i:userId]', function($userId) {
   // Instantiate the `UserController`
   $userController = new UserController();
+  // get the user's info
+  $userInfo = $userController->get($userId);
 
-  // show the specific user's page 
+
+  // Check if there's a header with the name 'Response-Type',
+  // and assign its value to a variable named `responseType`
+  $responseType = $_SERVER['HTTP_RESPONSE_TYPE'] ?? null;
+
+  // If the `responseType` is `raw/json`...
+  if ($responseType === 'raw/json') {
+    // ...get the `response` from `userController`
+    $response = $userController->getResponse();
+
+    // echo the `response` in a `json` format
+    echo json_encode($response, JSON_PRETTY_PRINT);
+
+    return; // <- stop the code execution here ;)
+  }
+
+  // At this point, the `responseType` is not `raw/json`,
+  // so we'll just show the specific user's page, as per project requirement
+  // TODO: Use the `userInfo` instead of the `userId`
   $userController->showPage($userId);
 
 });
@@ -246,9 +275,27 @@ $router->map('GET', '/users/[i:userId]', function($userId) {
 $router->map('GET', '/books', function() {
   // Instantiate the `BookController`
   $bookController = new BookController();
+  // get all books as `books`
+  $books = $bookController->getAll();
+  
+  // Check if there's a header with the name 'Response-Type',
+  // and assign its value to a variable named `responseType`
+  $responseType = $_SERVER['HTTP_RESPONSE_TYPE'] ?? null;
 
-  // show the list page
-  $bookController->showListPage();
+  // If the `responseType` is `raw/json`...
+  if ($responseType === 'raw/json') {
+    // ...get the `response` from `bookController`
+    $response = $bookController->getResponse();
+
+    // echo the `response` in a `json` format
+    echo json_encode($response, JSON_PRETTY_PRINT);
+
+    return; // <- stop the code execution here ;)
+  }
+
+  // At this point, the `responseType` is not `raw/json`,
+  // so we'll just show the list page, as per project requirement
+  $bookController->showListPage($books);
 
 });
 
@@ -286,9 +333,42 @@ $router->map('GET', '/books/[i:bookId]', function($bookId) {
   // Instantiate the `BookController`
   $bookController = new BookController();
 
+  // get the book's info
+  $bookInfo = $bookController->get($bookId);
+
+
+  // Check if there's a header with the name 'Response-Type',
+  // and assign its value to a variable named `responseType`
+  $responseType = $_SERVER['HTTP_RESPONSE_TYPE'] ?? null;
+
+  // If the `responseType` is `raw/json`...
+  if ($responseType === 'raw/json') {
+    // ...get the `response` from `bookController`
+    $response = $bookController->getResponse();
+
+    // echo the `response` in a `json` format
+    echo json_encode($response, JSON_PRETTY_PRINT);
+
+    return; // <- stop the code execution here ;)
+  }
+
+  // At this point, the `responseType` is not `raw/json`,
+  // so we'll just show the list page, as per project requirement
+
+  
   // show the specific book's page 
+  // TODO: Use the `bookInfo` instead of the `$bookId`
   $bookController->showPage($bookId);
 });
+
+
+
+
+
+
+
+
+
 
 
 
