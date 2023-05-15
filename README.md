@@ -34,7 +34,7 @@ The official deadline of the jobs below - according to [intra](https://intra.lap
 | 6 | [*`Job 02.3`*](#Job-023) | [Done](./src/Controller/AuthController.php)\* |
 | 7 | [*`Job 02.4`*](#Job-024) | [Done](./src/Controller/AuthController.php)\* |
 | 8 | [*`Job 03`*](#Job-03) | [Done](./src/Controller/BookController.php)\* |
-| 9 | [*`Job 04`*](#Job-04) | *_In progress_* |
+| 9 | [*`Job 04`*](#Job-04) | [Done](./assets/scripts/app.js)\* |
 | 10 | [*`Job +`*](#Job-) | Pending |
 
 
@@ -482,8 +482,8 @@ These are the following tasks of **Job 04** w/ their names and current status:
 | No. | Name | Status |
 |:----|:-----|:-------|
 | 1 | *`Basic Home Structure`* | [Done](./src/View/home.php) | 
-| 2 | *`Async Functions`* | *_In progress_* |
-| 3 | *`HTMLElements w/ JavaScript`* | Pending |
+| 2 | *`Async Functions`* | [Done](./assets/scripts/app.js) |
+| 3 | *`HTMLElements w/ JavaScript`* | [Done](./assets/scripts/app.js) |
 
 > NOTE: (\*) = still needs to be updated
 
@@ -500,9 +500,7 @@ These are the branches that were created for the Job 04:
 | No. | GUI | CLI |
 |:----|:----|:----|
 | 1 | ![Overview - GUI - Screenshot](./.github/screenshots/job04_overview_gui.png) | ![Logout - CLI - Screenshot](./.github/screenshots/job04_overview_cli.png) |
-| 2 | N/A | N/A |
-| 3 | N/A | N/A |
-| 4 | N/A | N/A |
+| 2 | ![Async Results - GUI - Giphy Capture](./.github/gifs/job04_async_gui.gif) | ![Async Results - CLI - Screenshot](./.github/screenshots/job04_async_cli.png) |
 
 
 </details>
