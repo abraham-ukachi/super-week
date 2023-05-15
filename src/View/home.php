@@ -88,8 +88,8 @@
     
   </script>
 
-  <!-- Script #JIC -->
-  <!-- <script type="module" src="assets/scripts/home.js" defer></script> -->
+  <!-- Script -->
+  <script type="module" src="assets/scripts/app.js" defer></script>
   
 </head>
 <!-- End of HEAD -->
@@ -171,7 +171,7 @@
       <button class="async-button" data-action="users" outlined>
         <span>Show Users</span>
       </button>
-      <div class="result">...</div>
+      <ul class="result">...</div>
     </div> 
 
     <!-- Async Action: Books -->
@@ -179,7 +179,7 @@
       <button class="async-button" data-action="books" outlined>
         <span>Show Books</span>
       </button>
-      <div class="result">...</div>
+      <ul class="result">...</div>
     </div>
 
     <!-- Async Action: User -->
@@ -188,7 +188,7 @@
       <button class="async-button" data-action="user" outlined>
         <span>Show user info</span>
       </button>
-      <div class="result">...</div>
+      <ul class="result">...</div>
     </div> 
 
     <!-- Async Action: Book -->
@@ -197,7 +197,7 @@
       <button class="async-button" data-action="book" outlined>
         <span>Show book info</span>
       </button>
-      <div class="result">...</div>
+      <ul class="result">...</div>
     </div>
   </div>
 
