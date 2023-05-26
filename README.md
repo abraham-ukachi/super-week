@@ -608,12 +608,12 @@ These are some of the things I did in addition to this project's [job requiremen
 |:----|:-----|:-----|:-------|
 | 1 | *`Database - Test`* | **database.php** | [Done](./src/Model/Helper/test/database.php)\* |
 | 2 | *`User Model - Test`* | **user_model.php** | [Done](./src/Model/test/user_model.php)\* |
-| 3 | *`Register - Controller`* | **RegisterController.php** | [Done](./src/Controller/RegisterController)\* | 
-| 4 | *`Login - Controller`* | **LoginController.php** | [Done](./src/Controller/LoginController)\* | 
-| 5 | *`Home - Controller`* | **HomeController.php** | [Done](./src/Controller/HomeController)\* | 
-| 6 | *`Logout - Controller`* | **LogoutController.php** | [Done](./src/Controller/LogoutController)\* | 
-| 7 | *`Book - Model`* | **BookModel.php** | [Done](./src/Model/BookModel)\* | 
-| 8 | *`Book - Controller`* | **BookController.php** | [Done](./src/Controller/BookController)\* | 
+| 3 | *`Register - Controller`* | **RegisterController.php** | [Done](./src/Controller/RegisterController.php)\* | 
+| 4 | *`Login - Controller`* | **LoginController.php** | [Done](./src/Controller/LoginController.php)\* | 
+| 5 | *`Home - Controller`* | **HomeController.php** | [Done](./src/Controller/HomeController.php)\* | 
+| 6 | *`Logout - Controller`* | **LogoutController.php** | [Done](./src/Controller/LogoutController.php)\* | 
+| 7 | *`Book - Model`* | **BookModel.php** | [Done](./src/Model/BookModel.php)\* | 
+| 8 | *`Book - Controller`* | **BookController.php** | [Done](./src/Controller/BookController.php)\* | 
 | 9 | *`??`* | **??** | ?? | 
 
 
